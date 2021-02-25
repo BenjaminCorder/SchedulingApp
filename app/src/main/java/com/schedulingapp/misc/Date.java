@@ -1,4 +1,4 @@
-package schedulingapp.misc;
+package com.schedulingapp.misc;
 
 
 /**
@@ -6,160 +6,103 @@ package schedulingapp.misc;
  */
 public class Date {
 
-  //
-  // Fields
-  //
+    //
+    // Fields
+    //
 
-  private int day;
-  private int month;
-  private int year;
-  private schedulingapp.misc.DayOfWeek dayOfWeek;
-  
-  //
-  // Constructors
-  //
-  public Date () { };
-  
-  //
-  // Methods
-  //
+    private final int day;
+    private final int month;
+    private final int year;
+    private final DayOfWeek dayOfWeek;
 
+    //
+    // Constructors
+    //
 
-  //
-  // Accessor methods
-  //
+    /**
+     * @param day
+     * @param month
+     * @param year
+     */
+    public Date(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.dayOfWeek = calcDayOfWeek();
+    }
 
-  /**
-   * Set the value of day
-   * @param newVar the new value of day
-   */
-  public void setDay (int newVar) {
-    day = newVar;
-  }
+    /**
+     * @param rhs
+     */
+    public Date(Date rhs) {
+        this.day = rhs.getDay();
+        this.month = rhs.getMonth();
+        this.year = rhs.getYear();
+        this.dayOfWeek = rhs.getDayOfWeek();
+    }
 
-  /**
-   * Get the value of day
-   * @return the value of day
-   */
-  public int getDay () {
-    return day;
-  }
-
-  /**
-   * Set the value of month
-   * @param newVar the new value of month
-   */
-  public void setMonth (int newVar) {
-    month = newVar;
-  }
-
-  /**
-   * Get the value of month
-   * @return the value of month
-   */
-  public int getMonth () {
-    return month;
-  }
-
-  /**
-   * Set the value of year
-   * @param newVar the new value of year
-   */
-  public void setYear (int newVar) {
-    year = newVar;
-  }
-
-  /**
-   * Get the value of year
-   * @return the value of year
-   */
-  public int getYear () {
-    return year;
-  }
-
-  /**
-   * Set the value of dayOfWeek
-   * @param newVar the new value of dayOfWeek
-   */
-  public void setDayOfWeek (schedulingapp.misc.DayOfWeek newVar) {
-    dayOfWeek = newVar;
-  }
-
-  /**
-   * Get the value of dayOfWeek
-   * @return the value of dayOfWeek
-   */
-  public schedulingapp.misc.DayOfWeek getDayOfWeek () {
-    return dayOfWeek;
-  }
-
-  //
-  // Other methods
-  //
-
-  /**
-   * @param        day
-   * @param        month
-   * @param        year
-   */
-  public void Date(int day, int month, int year)
-  {
-  }
+    //
+    // Methods
+    //
 
 
-  /**
-   * @param        rhs
-   */
-  public void Date(schedulingapp.misc.Date rhs)
-  {
-  }
+    //
+    // Accessor methods
+    //
+
+    /**
+     * Get the value of day
+     *
+     * @return the value of day
+     */
+    public int getDay() {
+        return day;
+    }
+
+    /**
+     * Get the value of month
+     *
+     * @return the value of month
+     */
+    public int getMonth() {
+        return month;
+    }
+
+    /**
+     * Get the value of year
+     *
+     * @return the value of year
+     */
+    public int getYear() {
+        return year;
+    }
+
+    /**
+     * Get the value of dayOfWeek
+     *
+     * @return the value of dayOfWeek
+     */
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    //
+    // Other methods
+    //
+
+    /**
+     * @return DayOfWeek
+     */
+    private DayOfWeek calcDayOfWeek() {
+        return DayOfWeek.DAY_OF_WEEK_UNSPECIFIED;
+    }
 
 
-  /**
-   * @return       int
-   */
-  public int getDay()
-  {
-  }
-
-
-  /**
-   * @return       int
-   */
-  public int getMonth()
-  {
-  }
-
-
-  /**
-   * @return       int
-   */
-  public int getYear()
-  {
-  }
-
-
-  /**
-   * @return       schedulingapp.misc.DayOfWeek
-   */
-  public schedulingapp.misc.DayOfWeek getDayOfWeek()
-  {
-  }
-
-
-  /**
-   * @return       schedulingapp.misc.DayOfWeek
-   */
-  private schedulingapp.misc.DayOfWeek calcDayOfWeek()
-  {
-  }
-
-
-  /**
-   */
-  private void validateDate()
-  {
-  }
+    /**
+     *
+     */
+    private void validateDate() {
+    }
 
 
 }

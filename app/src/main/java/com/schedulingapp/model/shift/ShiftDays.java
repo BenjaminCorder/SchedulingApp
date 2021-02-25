@@ -1,85 +1,72 @@
-package schedulingapp.model.shift;
-import schedulingapp.misc.Date;
-import schedulingapp.misc.Time;
-import schedulingapp.misc.ShiftTime;
+package com.schedulingapp.model.shift;
 
+import com.schedulingapp.misc.Date;
+import com.schedulingapp.misc.ShiftTime;
+import com.schedulingapp.misc.Time;
 
 /**
  * Class ShiftDays
  */
 public class ShiftDays extends Shift {
 
-  //
-  // Fields
-  //
+    //
+    // Fields
+    //
 
-  static private schedulingapp.misc.ShiftTime shiftTime = DAYS;
-  
-  //
-  // Constructors
-  //
-  public ShiftDays () { };
-  
-  //
-  // Methods
-  //
+    static private final ShiftTime shiftTime = ShiftTime.DAYS;
 
+    //
+    // Constructors
+    //
 
-  //
-  // Accessor methods
-  //
+    /**
+     * @param date
+     */
+    public ShiftDays(Date date) {
+    }
 
-  /**
-   * Get the value of shiftTime
-   * @return the value of shiftTime
-   */
-  public schedulingapp.misc.ShiftTime getShiftTime () {
-    return shiftTime;
-  }
+    /**
+     * @param date
+     * @param startTime
+     * @param endTime
+     */
+    public ShiftDays(Date date, Time startTime, Time endTime) {
+    }
 
-  //
-  // Other methods
-  //
+    /**
+     * @param rhs
+     */
+    public ShiftDays(ShiftDays rhs) {
+    }
 
-  /**
-   * @param        date
-   */
-  public void ShiftDays(schedulingapp.misc.Date date)
-  {
-  }
+    //
+    // Methods
+    //
 
 
-  /**
-   * @param        date
-   * @param        startTime
-   * @param        endTime
-   */
-  public void ShiftDays(schedulingapp.misc.Date date, schedulingapp.misc.Time startTime, schedulingapp.misc.Time endTime)
-  {
-  }
+    //
+    // Accessor methods
+    //
 
+    /**
+     * Get the value of shiftTime
+     *
+     * @return the value of shiftTime
+     */
+    public ShiftTime getShiftTime() {
+        return shiftTime;
+    }
 
-  /**
-   * @param        rhs
-   */
-  public void ShiftDays(schedulingapp.model.shift.ShiftDays rhs)
-  {
-  }
+    //
+    // Other methods
+    //
 
-
-  /**
-   * @return       schedulingapp.misc.ShiftTime
-   */
-  public static schedulingapp.misc.ShiftTime getShiftTime()
-  {
-  }
-
-
-  /**
-   */
-  private void validateShift()
-  {
-  }
+    /**
+     *
+     */
+    @Override
+    protected void validateShift() {
+    }
 
 
 }

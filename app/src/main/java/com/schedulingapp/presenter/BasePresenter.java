@@ -1,4 +1,4 @@
-package schedulingapp.presenter;
+package com.schedulingapp.presenter;
 
 
 /**
@@ -6,27 +6,28 @@ package schedulingapp.presenter;
  */
 public interface BasePresenter {
 
-  //
-  // Fields
-  //
-
-  
-  //
-  // Methods
-  //
+    //
+    // Fields
+    //
 
 
-  //
-  // Accessor methods
-  //
+    //
+    // Methods
+    //
 
-  //
-  // Other methods
-  //
 
-  /**
-   */
-  public void onDestroy();
+    //
+    // Accessor methods
+    //
+
+    //
+    // Other methods
+    //
+
+    /**
+     *
+     */
+    void onDestroy();
 
 
 }

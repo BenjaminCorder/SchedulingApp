@@ -1,178 +1,136 @@
-package schedulingapp.model.payperiod;
-import schedulingapp.misc.Date;
-import schedulingapp.model.shift.Shift;
-import schedulingapp.misc.DayOfWeek;
-import schedulingapp.misc.ShiftTime;
+package com.schedulingapp.model.payperiod;
 
+import com.schedulingapp.misc.Date;
+import com.schedulingapp.misc.DayOfWeek;
+import com.schedulingapp.misc.ShiftTime;
+import com.schedulingapp.model.shift.Shift;
 
 /**
  * Class PayPeriod
  */
 public class PayPeriod {
 
-  //
-  // Fields
-  //
+    //
+    // Fields
+    //
 
-  private schedulingapp.misc.Date startDate;
-  private schedulingapp.misc.Date endDate;
-  private schedulingapp.model.payperiod.WorkWeek weekFirst;
-  private schedulingapp.model.payperiod.WorkWeek weekSecond;
-  
-  //
-  // Constructors
-  //
-  public PayPeriod () { };
-  
-  //
-  // Methods
-  //
+    private Date startDate;
+    private WorkWeek weekFirst;
+    private WorkWeek weekSecond;
 
+    //
+    // Constructors
+    //
 
-  //
-  // Accessor methods
-  //
+    /**
+     * @param startDate
+     */
+    public PayPeriod(Date startDate) {
+    }
 
-  /**
-   * Set the value of startDate
-   * @param newVar the new value of startDate
-   */
-  public void setStartDate (schedulingapp.misc.Date newVar) {
-    startDate = newVar;
-  }
+    /**
+     * @param rhs
+     */
+    public PayPeriod(PayPeriod rhs) {
+    }
 
-  /**
-   * Get the value of startDate
-   * @return the value of startDate
-   */
-  public schedulingapp.misc.Date getStartDate () {
-    return startDate;
-  }
-
-  /**
-   * Set the value of endDate
-   * @param newVar the new value of endDate
-   */
-  public void setEndDate (schedulingapp.misc.Date newVar) {
-    endDate = newVar;
-  }
-
-  /**
-   * Get the value of endDate
-   * @return the value of endDate
-   */
-  public schedulingapp.misc.Date getEndDate () {
-    return endDate;
-  }
-
-  /**
-   * Set the value of weekFirst
-   * @param newVar the new value of weekFirst
-   */
-  public void setWeekFirst (schedulingapp.model.payperiod.WorkWeek newVar) {
-    weekFirst = newVar;
-  }
-
-  /**
-   * Get the value of weekFirst
-   * @return the value of weekFirst
-   */
-  public schedulingapp.model.payperiod.WorkWeek getWeekFirst () {
-    return weekFirst;
-  }
-
-  /**
-   * Set the value of weekSecond
-   * @param newVar the new value of weekSecond
-   */
-  public void setWeekSecond (schedulingapp.model.payperiod.WorkWeek newVar) {
-    weekSecond = newVar;
-  }
-
-  /**
-   * Get the value of weekSecond
-   * @return the value of weekSecond
-   */
-  public schedulingapp.model.payperiod.WorkWeek getWeekSecond () {
-    return weekSecond;
-  }
-
-  //
-  // Other methods
-  //
-
-  /**
-   * @param        startDate
-   */
-  public void PayPeriod(schedulingapp.misc.Date startDate)
-  {
-  }
+    //
+    // Methods
+    //
 
 
-  /**
-   * @param        rhs
-   */
-  public void PayPeriod(schedulingapp.model.payperiod.PayPeriod rhs)
-  {
-  }
+    //
+    // Accessor methods
+    //
+
+    /**
+     * Get the value of startDate
+     *
+     * @return the value of startDate
+     */
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    /**
+     * Get the value of weekFirst
+     *
+     * @return the value of weekFirst
+     */
+    public WorkWeek getWeekFirst() {
+        return weekFirst;
+    }
+
+    /**
+     * Set the value of weekFirst
+     *
+     * @param newVar the new value of weekFirst
+     */
+    public void setWeekFirst(WorkWeek newVar) {
+        weekFirst = newVar;
+    }
+
+    /**
+     * Get the value of weekSecond
+     *
+     * @return the value of weekSecond
+     */
+    public WorkWeek getWeekSecond() {
+        return weekSecond;
+    }
+
+    /**
+     * Set the value of weekSecond
+     *
+     * @param newVar the new value of weekSecond
+     */
+    public void setWeekSecond(WorkWeek newVar) {
+        weekSecond = newVar;
+    }
+
+    //
+    // Other methods
+    //
+
+       /**
+     * @param dayOfWeek
+     * @param shiftTime
+     * @param weekNumber
+     * @return com.schedulingapp.model.shift.Shift
+     */
+    public Shift getShift(DayOfWeek dayOfWeek, ShiftTime shiftTime, int weekNumber) {
+        return null;
+    }
 
 
-  /**
-   * @return       schedulingapp.misc.Date
-   */
-  public schedulingapp.misc.Date getStartDate()
-  {
-  }
+    /**
+     * @param shift
+     * @param weekNumber
+     */
+    public void setShift(Shift shift, int weekNumber) {
+    }
 
 
-  /**
-   * @return       schedulingapp.misc.Date
-   */
-  public schedulingapp.misc.Date getEndDate()
-  {
-  }
+    /**
+     * @return double
+     */
+    public double getTotalHours() {
+        return 0;
+    }
 
 
-  /**
-   * @return       schedulingapp.model.shift.Shift
-   * @param        dayOfWeek
-   * @param        shiftTime
-   * @param        weekNumber
-   */
-  public schedulingapp.model.shift.Shift getShift(schedulingapp.misc.DayOfWeek dayOfWeek, schedulingapp.misc.ShiftTime shiftTime, int weekNumber)
-  {
-  }
+    /**
+     *
+     */
+    private void calcEndDate() {
+    }
 
 
-  /**
-   * @param        shift
-   * @param        weekNumber
-   */
-  public void setShift(schedulingapp.model.shift.Shift shift, int weekNumber)
-  {
-  }
-
-
-  /**
-   * @return       double
-   */
-  public double getTotalHours()
-  {
-  }
-
-
-  /**
-   */
-  private void calcEndDate()
-  {
-  }
-
-
-  /**
-   */
-  private void validatePayPeriod()
-  {
-  }
+    /**
+     *
+     */
+    private void validatePayPeriod() {
+    }
 
 
 }

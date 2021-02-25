@@ -1,57 +1,51 @@
-package schedulingapp.model.employee;
-import schedulingapp.misc.Gender;
-
+package com.schedulingapp.model.employee;
 
 /**
  * Class ReserveEmployee
  */
 public class ReserveEmployee extends Employee {
 
-  //
-  // Fields
-  //
-
-  
-  //
-  // Constructors
-  //
-  public ReserveEmployee () { };
-  
-  //
-  // Methods
-  //
+    //
+    // Fields
+    //
 
 
-  //
-  // Accessor methods
-  //
+    //
+    // Constructors
+    //
 
-  //
-  // Other methods
-  //
-
-  /**
-   * @param        name
-   * @param        gender
-   */
-  public void ReserveEmployee(String name, schedulingapp.misc.Gender gender)
-  {
-  }
+    /**
+     * @param name
+     * @param gender
+     */
+    public ReserveEmployee(String name, com.schedulingapp.misc.Gender gender) {
+    }
 
 
-  /**
-   * @param        rhs
-   */
-  public void ReserveEmployee(schedulingapp.model.employee.ReserveEmployee rhs)
-  {
-  }
+    /**
+     * @param rhs
+     */
+    public ReserveEmployee(com.schedulingapp.model.employee.ReserveEmployee rhs) {
+    }
 
+    //
+    // Methods
+    //
 
-  /**
-   */
-  private void validate()
-  {
-  }
+    //
+    // Accessor methods
+    //
+
+    //
+    // Other methods
+    //
+
+    /**
+     *
+     */
+    @Override
+    protected void validate() {
+    }
 
 
 }

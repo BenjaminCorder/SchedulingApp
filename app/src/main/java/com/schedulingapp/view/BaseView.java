@@ -1,35 +1,32 @@
-package schedulingapp.view;
-import schedulingapp.view.BaseView.T.schedulingapp_view_BaseView_T;
-
+package com.schedulingapp.view;
 
 /**
  * Interface BaseView
  */
-public interface BaseView<T>
- {
+public interface BaseView<T> {
 
-  //
-  // Fields
-  //
-
-  
-  //
-  // Methods
-  //
+    //
+    // Fields
+    //
 
 
-  //
-  // Accessor methods
-  //
+    //
+    // Methods
+    //
 
-  //
-  // Other methods
-  //
 
-  /**
-   * @param        presenter
-   */
-  public void setPresenter(schedulingapp.view.BaseView.T presenter);
+    //
+    // Accessor methods
+    //
+
+    //
+    // Other methods
+    //
+
+    /**
+     * @param presenter
+     */
+    void setPresenter(T presenter);
 
 
 }

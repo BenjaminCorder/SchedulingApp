@@ -1,27 +1,29 @@
-package schedulingapp.view;
+package com.schedulingapp.view;
 
+
+import com.schedulingapp.presenter.MainPresenter;
 
 /**
  * Interface MainContractView
  */
-public interface MainContractView extends BaseView {
+public interface MainContractView extends BaseView<MainPresenter> {
 
-  //
-  // Fields
-  //
-
-  
-  //
-  // Methods
-  //
+    //
+    // Fields
+    //
 
 
-  //
-  // Accessor methods
-  //
+    //
+    // Methods
+    //
 
-  //
-  // Other methods
-  //
+
+    //
+    // Accessor methods
+    //
+
+    //
+    // Other methods
+    //
 
 }

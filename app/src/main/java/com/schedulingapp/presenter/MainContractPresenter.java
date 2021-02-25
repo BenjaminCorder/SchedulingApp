@@ -1,4 +1,4 @@
-package schedulingapp.presenter;
+package com.schedulingapp.presenter;
 
 
 /**
@@ -6,22 +6,22 @@ package schedulingapp.presenter;
  */
 public interface MainContractPresenter extends BasePresenter {
 
-  //
-  // Fields
-  //
-
-  
-  //
-  // Methods
-  //
+    //
+    // Fields
+    //
 
 
-  //
-  // Accessor methods
-  //
+    //
+    // Methods
+    //
 
-  //
-  // Other methods
-  //
+
+    //
+    // Accessor methods
+    //
+
+    //
+    // Other methods
+    //
 
 }

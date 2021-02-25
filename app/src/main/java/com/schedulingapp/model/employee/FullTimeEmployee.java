@@ -1,91 +1,73 @@
-package schedulingapp.model.employee;
-import schedulingapp.misc.Gender;
-import schedulingapp.model.payperiod.PayPeriod;
+package com.schedulingapp.model.employee;
 
+import com.schedulingapp.misc.Gender;
+import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
  * Class FullTimeEmployee
  */
 public class FullTimeEmployee extends Employee {
 
-  //
-  // Fields
-  //
+    //
+    // Fields
+    //
 
-  private schedulingapp.model.payperiod.PayPeriod schedule;
-  
-  //
-  // Constructors
-  //
-  public FullTimeEmployee () { };
-  
-  //
-  // Methods
-  //
+    private PayPeriod schedule;
 
+    //
+    // Constructors
+    //
 
-  //
-  // Accessor methods
-  //
+    /**
+     * @param name
+     * @param gender
+     */
+    public FullTimeEmployee(String name, Gender gender) {
+    }
 
-  /**
-   * Set the value of schedule
-   * @param newVar the new value of schedule
-   */
-  public void setSchedule (schedulingapp.model.payperiod.PayPeriod newVar) {
-    schedule = newVar;
-  }
+    /**
+     * @param rhs
+     */
+    public FullTimeEmployee(FullTimeEmployee rhs) {
+    }
 
-  /**
-   * Get the value of schedule
-   * @return the value of schedule
-   */
-  public schedulingapp.model.payperiod.PayPeriod getSchedule () {
-    return schedule;
-  }
-
-  //
-  // Other methods
-  //
-
-  /**
-   * @param        name
-   * @param        gender
-   */
-  public void FullTimeEmployee(String name, schedulingapp.misc.Gender gender)
-  {
-  }
+    //
+    // Methods
+    //
 
 
-  /**
-   * @param        rhs
-   */
-  public void FullTimeEmployee(schedulingapp.model.employee.FullTimeEmployee rhs)
-  {
-  }
+    //
+    // Accessor methods
+    //
 
+    /**
+     * Get the value of schedule
+     *
+     * @return the value of schedule
+     */
+    public PayPeriod getSchedule() {
+        return schedule;
+    }
 
-  /**
-   * @return       schedulingapp.model.payperiod.PayPeriod
-   */
-  public schedulingapp.model.payperiod.PayPeriod getSchedule()
-  {
-  }
+    /**
+     * Set the value of schedule
+     *
+     * @param schedule the new value of schedule
+     */
+    public void setSchedule(PayPeriod schedule) {
+        this.schedule = schedule;
+    }
 
+    //
+    // Other methods
+    //
 
-  /**
-   * @param        schedule
-   */
-  public void setSchedule(schedulingapp.model.payperiod.PayPeriod schedule)
-  {
-  }
-
-
-  /**
-   */
-  private void validate()
-  {
-  }
+    /**
+     *
+     */
+    @Override
+    protected void validate() {
+    }
 
 
 }

@@ -1,153 +1,120 @@
-package schedulingapp.model.employee;
-import schedulingapp.misc.Date;
-import List<5cschedule.model.payperiod.Date>.List_5cschedule_model_payperiod_Date_;
-import Map<5cschedule.model.payperiod.Date, Boolean>.Map_5cschedule_model_payperiod_Date_Boolean_;
+package com.schedulingapp.model.employee;
 
+import com.schedulingapp.misc.Date;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Class Availability
  */
 public class Availability {
 
-  //
-  // Fields
-  //
+    //
+    // Fields
+    //
 
-  private schedulingapp.misc.Date startDate;
-  private List<Boolean> availabilities;
-  
-  //
-  // Constructors
-  //
-  public Availability () { };
-  
-  //
-  // Methods
-  //
+    private Date startDate;
+    private List<Boolean> availabilities;
 
+    //
+    // Constructors
+    //
+    public Availability(com.schedulingapp.misc.Date startDate) {
+    }
 
-  //
-  // Accessor methods
-  //
+    public Availability(com.schedulingapp.model.employee.Availability rhs) {
+    }
 
-  /**
-   * Set the value of startDate
-   * @param newVar the new value of startDate
-   */
-  public void setStartDate (schedulingapp.misc.Date newVar) {
-    startDate = newVar;
-  }
-
-  /**
-   * Get the value of startDate
-   * @return the value of startDate
-   */
-  public schedulingapp.misc.Date getStartDate () {
-    return startDate;
-  }
-
-  /**
-   * Set the value of availabilities
-   * @param newVar the new value of availabilities
-   */
-  public void setAvailabilities (List<Boolean> newVar) {
-    availabilities = newVar;
-  }
-
-  /**
-   * Get the value of availabilities
-   * @return the value of availabilities
-   */
-  public List<Boolean> getAvailabilities () {
-    return availabilities;
-  }
-
-  //
-  // Other methods
-  //
-
-  /**
-   * @param        startDate
-   */
-  public void Availability(schedulingapp.misc.Date startDate)
-  {
-  }
+    //
+    // Methods
+    //
 
 
-  /**
-   * @param        rhs
-   */
-  public void Availability(schedulingapp.model.employee.Availability rhs)
-  {
-  }
+    //
+    // Accessor methods
+    //
+
+    /**
+     * Get the value of startDate
+     *
+     * @return the value of startDate
+     */
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    /**
+     * Set the value of startDate
+     *
+     * @param newVar the new value of startDate
+     */
+    public void setStartDate(Date newVar) {
+        startDate = newVar;
+    }
+
+    /**
+     * Get the value of availabilities
+     *
+     * @return the value of availabilities
+     */
+    public List<Boolean> getAvailabilities() {
+        return availabilities;
+    }
+
+    /**
+     * Set the value of availabilities
+     *
+     * @param newVar the new value of availabilities
+     */
+    public void setAvailabilities(List<Boolean> newVar) {
+        availabilities = newVar;
+    }
+
+    //
+    // Other methods
+    //
+
+    /**
+     * @param date
+     * @return boolean
+     */
+    public boolean checkAvailability(com.schedulingapp.misc.Date date) {
+        return true;
+    }
 
 
-  /**
-   * @return       schedulingapp.misc.Date
-   */
-  public schedulingapp.misc.Date getStartDate()
-  {
-  }
+    /**
+     * @param dates
+     * @return List<Boolean>
+     */
+    public List<Boolean> bulkCheckAvailability(List<Date> dates) {
+        return null;
+    }
 
 
-  /**
-   * @return       List<Boolean>
-   */
-  public List<Boolean> getAvailabilities()
-  {
-  }
+    /**
+     * @param date
+     * @param isAvailable
+     */
+    public void updateAvailability(com.schedulingapp.misc.Date date, boolean isAvailable) {
+    }
 
 
-  /**
-   * @param        availabilities
-   */
-  public void setAvailabilities(List<Boolean> availabilities)
-  {
-  }
+    /**
+     * @param dates
+     */
+    public void bulkUpdateAvailability(Map<Date, Boolean> dates) {
+    }
 
 
-  /**
-   * @return       boolean
-   * @param        date
-   */
-  public boolean checkAvailability(schedulingapp.misc.Date date)
-  {
-  }
-
-
-  /**
-   * @return       List<Boolean>
-   * @param        dates
-   */
-  public List<Boolean> bulkCheckAvailability(List<5cschedule.model.payperiod.Date> dates)
-  {
-  }
-
-
-  /**
-   * @param        date
-   * @param        isAvailable
-   */
-  public void updateAvailability(schedulingapp.misc.Date date, boolean isAvailable)
-  {
-  }
-
-
-  /**
-   * @param        dates
-   */
-  public void bulkUpdateAvailability(Map<5cschedule.model.payperiod.Date, Boolean> dates)
-  {
-  }
-
-
-  /**
-   * @return       int
-   * @param        date
-   */
-  private int dateToIndex(schedulingapp.misc.Date date)
-  {
-  }
+    /**
+     * @param date
+     * @return int
+     */
+    private int dateToIndex(com.schedulingapp.misc.Date date) {
+        return 0;
+    }
 
 
 }
