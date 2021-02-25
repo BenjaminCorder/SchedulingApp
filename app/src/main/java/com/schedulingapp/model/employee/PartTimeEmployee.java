@@ -1,0 +1,73 @@
+package com.schedulingapp.model.employee;
+
+import com.schedulingapp.misc.Gender;
+import com.schedulingapp.model.payperiod.PayPeriod;
+
+/**
+ * Class PartTimeEmployee
+ */
+public class PartTimeEmployee extends Employee {
+
+    //
+    // Fields
+    //
+
+    private PayPeriod schedule;
+
+    //
+    // Constructors
+    //
+
+    /**
+     * @param name
+     * @param gender
+     */
+    public PartTimeEmployee(String name, Gender gender) {
+    }
+
+    /**
+     * @param rhs
+     */
+    public PartTimeEmployee(PartTimeEmployee rhs) {
+    }
+
+    //
+    // Methods
+    //
+
+
+    //
+    // Accessor methods
+    //
+
+    /**
+     * Get the value of schedule
+     *
+     * @return the value of schedule
+     */
+    public PayPeriod getSchedule() {
+        return schedule;
+    }
+
+    /**
+     * Set the value of schedule
+     *
+     * @param schedule the new value of schedule
+     */
+    public void setSchedule(PayPeriod schedule) {
+        this.schedule = schedule;
+    }
+
+    //
+    // Other methods
+    //
+
+    /**
+     *
+     */
+    @Override
+    protected void validate() {
+    }
+
+
+}
