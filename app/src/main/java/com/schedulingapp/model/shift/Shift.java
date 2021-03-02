@@ -64,7 +64,7 @@ abstract public class Shift {
      *
      * @param date the new value of date
      */
-    public void setDate(com.schedulingapp.misc.Date date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

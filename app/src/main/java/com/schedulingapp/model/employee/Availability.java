@@ -115,6 +115,4 @@ public class Availability {
     private int dateToIndex(com.schedulingapp.misc.Date date) {
         return 0;
     }
-
-
 }

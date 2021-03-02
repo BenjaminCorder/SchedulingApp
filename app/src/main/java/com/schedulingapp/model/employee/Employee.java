@@ -3,7 +3,6 @@ package com.schedulingapp.model.employee;
 import com.schedulingapp.misc.Gender;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
-
 /**
  * Class Employee
  */

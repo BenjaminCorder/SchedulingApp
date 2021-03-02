@@ -1,5 +1,7 @@
 package com.schedulingapp.model.employee;
 
+import com.schedulingapp.misc.Gender;
+
 /**
  * Class ReserveEmployee
  */
@@ -18,14 +20,14 @@ public class ReserveEmployee extends Employee {
      * @param name
      * @param gender
      */
-    public ReserveEmployee(String name, com.schedulingapp.misc.Gender gender) {
+    public ReserveEmployee(String name, Gender gender) {
     }
 
 
     /**
      * @param rhs
      */
-    public ReserveEmployee(com.schedulingapp.model.employee.ReserveEmployee rhs) {
+    public ReserveEmployee(ReserveEmployee rhs) {
     }
 
     //
