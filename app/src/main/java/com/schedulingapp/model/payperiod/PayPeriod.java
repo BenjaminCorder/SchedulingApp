@@ -7,7 +7,7 @@ import com.schedulingapp.misc.exceptions.IllegalDateException;
 import com.schedulingapp.model.shift.Shift;
 
 /**
- * Class PayPeriod
+ * A class representing a pay period of two weeks.
  */
 public class PayPeriod {
 
