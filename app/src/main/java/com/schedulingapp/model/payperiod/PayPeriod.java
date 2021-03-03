@@ -8,6 +8,10 @@ import com.schedulingapp.model.shift.Shift;
 
 /**
  * A class representing a pay period of two weeks.
+ *
+ * @author Ben Corder
+ * @version 1.0
+ * @since 1.0
  */
 public class PayPeriod {
 
