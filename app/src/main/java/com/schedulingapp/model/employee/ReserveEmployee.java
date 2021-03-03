@@ -4,7 +4,7 @@ import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
 
 /**
- * Class ReserveEmployee
+ * A class representing a reserve employee.
  *
  * @author Benjamin Corder
  * @version 1.0

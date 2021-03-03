@@ -5,7 +5,7 @@ import com.schedulingapp.misc.Gender;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
- * Class FullTimeEmployee
+ * A class representing a full time employee.
  *
  * @author Benjamin Corder
  * @version 1.0

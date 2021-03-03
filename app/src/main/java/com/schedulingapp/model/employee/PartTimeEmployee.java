@@ -5,7 +5,7 @@ import com.schedulingapp.misc.Gender;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
- * Class PartTimeEmployee
+ * A class representing a part time employee.
  *
  * @author Benjamin Corder
  * @version 1.0

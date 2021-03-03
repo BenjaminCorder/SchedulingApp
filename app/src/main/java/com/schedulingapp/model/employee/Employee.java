@@ -6,7 +6,7 @@ import com.schedulingapp.misc.ShiftTime;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
- * Class Employee
+ * An abstract class representing all common traits across all types of employees.
  *
  * @author Benjamin Corder
  * @version 1.0
