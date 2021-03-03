@@ -1,7 +1,6 @@
 package com.schedulingapp.model.payperiod;
 
 import com.schedulingapp.misc.Date;
-import com.schedulingapp.misc.DayOfWeek;
 import com.schedulingapp.misc.ShiftTime;
 import com.schedulingapp.model.shift.Shift;
 import com.schedulingapp.model.shift.ShiftDays;
@@ -9,7 +8,11 @@ import com.schedulingapp.model.shift.ShiftMids;
 import com.schedulingapp.model.shift.ShiftSwings;
 
 /**
- * Class WorkWeek
+ * A class representing a work week.
+ *
+ * @author Ben Corder
+ * @version 1.0
+ * @since 1.0
  */
 public class WorkWeek {
 
@@ -17,7 +20,7 @@ public class WorkWeek {
     // Fields
     //
 
-    private Date startDate;
+    private final Date startDate;
     private ShiftDays sunDays;
     private ShiftSwings sunSwings;
     private ShiftMids sunMids;
@@ -43,7 +46,66 @@ public class WorkWeek {
     //
     // Constructors
     //
-    public WorkWeek() {
+
+    /**
+     * Non-Default Constructor.
+     *
+     * @param startDate date the work week begins on.
+     */
+    public WorkWeek(Date startDate) {
+        this.startDate = startDate;
+        sunDays = null;
+        sunSwings = null;
+        sunMids = null;
+        monDays = null;
+        monSwings = null;
+        monMids = null;
+        tueDays = null;
+        tueSwings = null;
+        tueMids = null;
+        wedDays = null;
+        wedSwings = null;
+        wedMids = null;
+        thuDays = null;
+        thuSwings = null;
+        thuMids = null;
+        friDays = null;
+        friSwings = null;
+        friMids = null;
+        satDays = null;
+        satSwings = null;
+        satMids = null;
+    }
+
+
+    /**
+     * Copy Constructor.
+     *
+     * @param rhs object to make a copy of.
+     */
+    public WorkWeek(WorkWeek rhs) {
+        startDate = rhs.getStartDate();
+        sunDays = rhs.getSunDays();
+        sunSwings = rhs.getSunSwings();
+        sunMids = rhs.getSunMids();
+        monDays = rhs.getMonDays();
+        monSwings = rhs.getMonSwings();
+        monMids = rhs.getMonMids();
+        tueDays = rhs.getTueDays();
+        tueSwings = rhs.getTueSwings();
+        tueMids = rhs.getTueMids();
+        wedDays = rhs.getWedDays();
+        wedSwings = rhs.getWedSwings();
+        wedMids = rhs.getWedMids();
+        thuDays = rhs.getThuDays();
+        thuSwings = rhs.getThuSwings();
+        thuMids = rhs.getThuMids();
+        friDays = rhs.getFriDays();
+        friSwings = rhs.getFriSwings();
+        friMids = rhs.getFriMids();
+        satDays = rhs.getSatDays();
+        satSwings = rhs.getSatSwings();
+        satMids = rhs.getSatMids();
     }
 
     //
@@ -51,16 +113,31 @@ public class WorkWeek {
     //
 
     /**
-     * @param weekNumber
+     * Returns the shift that corresponds to the input date and time.
+     *
+     * @param date date of the shift to return.
+     * @param shiftTime time of the shift to return.
+     * @return Shift that corresponds to the input date and time.
      */
-    public WorkWeek(int weekNumber) {
+    public Shift getShift(Date date, ShiftTime shiftTime) {
+        return null;
     }
 
+    /**
+     * General setter for all shifts.
+     *
+     * @param shift new shift to replace the shift it corresponds to.
+     */
+    public void setShift(Shift shift) {
+    }
 
     /**
-     * @param rhs
+     * Calculate the total hours worked over the work week.
+     *
+     * @return double number of hours worked over the work week.
      */
-    public WorkWeek(WorkWeek rhs) {
+    public double calcTotalHours() {
+        return 0;
     }
 
     //
@@ -68,426 +145,394 @@ public class WorkWeek {
     //
 
     /**
-     * Get the value of startDate
+     * Get the value of startDate.
      *
-     * @return the value of startDate
+     * @return the value of startDate.
      */
     public Date getStartDate() {
         return startDate;
     }
 
     /**
-     * Set the value of startDate
+     * Get the value of sunDays.
      *
-     * @param newVar the new value of startDate
-     */
-    public void setStartDate(Date newVar) {
-        startDate = newVar;
-    }
-
-    /**
-     * Get the value of sunDays
-     *
-     * @return the value of sunDays
+     * @return the value of sunDays.
      */
     public ShiftDays getSunDays() {
         return sunDays;
     }
 
     /**
-     * Set the value of sunDays
+     * Set the value of sunDays.
      *
-     * @param newVar the new value of sunDays
+     * @param sunDays the new value of sunDays.
      */
-    public void setSunDays(ShiftDays newVar) {
-        sunDays = newVar;
+    public void setSunDays(ShiftDays sunDays) {
+        this.sunDays = sunDays;
     }
 
     /**
-     * Get the value of sunSwings
+     * Get the value of sunSwings.
      *
-     * @return the value of sunSwings
+     * @return the value of sunSwings.
      */
     public ShiftSwings getSunSwings() {
         return sunSwings;
     }
 
     /**
-     * Set the value of sunSwings
+     * Set the value of sunSwings.
      *
-     * @param newVar the new value of sunSwings
+     * @param sunSwings the new value of sunSwings.
      */
-    public void setSunSwings(ShiftSwings newVar) {
-        sunSwings = newVar;
+    public void setSunSwings(ShiftSwings sunSwings) {
+        this.sunSwings = sunSwings;
     }
 
     /**
-     * Get the value of sunMids
+     * Get the value of sunMids.
      *
-     * @return the value of sunMids
+     * @return the value of sunMids.
      */
     public ShiftMids getSunMids() {
         return sunMids;
     }
 
     /**
-     * Set the value of sunMids
+     * Set the value of sunMids.
      *
-     * @param newVar the new value of sunMids
+     * @param sunMids the new value of sunMids.
      */
-    public void setSunMids(ShiftMids newVar) {
-        sunMids = newVar;
+    public void setSunMids(ShiftMids sunMids) {
+        this.sunMids = sunMids;
     }
 
     /**
-     * Get the value of monDays
+     * Get the value of monDays.
      *
-     * @return the value of monDays
+     * @return the value of monDays.
      */
     public ShiftDays getMonDays() {
         return monDays;
     }
 
     /**
-     * Set the value of monDays
+     * Set the value of monDays.
      *
-     * @param newVar the new value of monDays
+     * @param monDays the new value of monDays.
      */
-    public void setMonDays(ShiftDays newVar) {
-        monDays = newVar;
+    public void setMonDays(ShiftDays monDays) {
+        this.monDays = monDays;
     }
 
     /**
-     * Get the value of monSwings
+     * Get the value of monSwings.
      *
-     * @return the value of monSwings
+     * @return the value of monSwings.
      */
     public ShiftSwings getMonSwings() {
         return monSwings;
     }
 
     /**
-     * Set the value of monSwings
+     * Set the value of monSwings.
      *
-     * @param newVar the new value of monSwings
+     * @param monSwings the new value of monSwings.
      */
-    public void setMonSwings(ShiftSwings newVar) {
-        monSwings = newVar;
+    public void setMonSwings(ShiftSwings monSwings) {
+        this.monSwings = monSwings;
     }
 
     /**
-     * Get the value of monMids
+     * Get the value of monMids.
      *
-     * @return the value of monMids
+     * @return the value of monMids.
      */
     public ShiftMids getMonMids() {
         return monMids;
     }
 
     /**
-     * Set the value of monMids
+     * Set the value of monMids.
      *
-     * @param newVar the new value of monMids
+     * @param monMids the new value of monMids.
      */
-    public void setMonMids(ShiftMids newVar) {
-        monMids = newVar;
+    public void setMonMids(ShiftMids monMids) {
+        this.monMids = monMids;
     }
 
     /**
-     * Get the value of tueDays
+     * Get the value of tueDays.
      *
-     * @return the value of tueDays
+     * @return the value of tueDays.
      */
     public ShiftDays getTueDays() {
         return tueDays;
     }
 
     /**
-     * Set the value of tueDays
+     * Set the value of tueDays.
      *
-     * @param newVar the new value of tueDays
+     * @param tueDays the new value of tueDays.
      */
-    public void setTueDays(ShiftDays newVar) {
-        tueDays = newVar;
+    public void setTueDays(ShiftDays tueDays) {
+        this.tueDays = tueDays;
     }
 
     /**
-     * Get the value of tueSwings
+     * Get the value of tueSwings.
      *
-     * @return the value of tueSwings
+     * @return the value of tueSwings.
      */
     public ShiftSwings getTueSwings() {
         return tueSwings;
     }
 
     /**
-     * Set the value of tueSwings
+     * Set the value of tueSwings.
      *
-     * @param newVar the new value of tueSwings
+     * @param tueSwings the new value of tueSwings.
      */
-    public void setTueSwings(ShiftSwings newVar) {
-        tueSwings = newVar;
+    public void setTueSwings(ShiftSwings tueSwings) {
+        this.tueSwings = tueSwings;
     }
 
     /**
-     * Get the value of tueMids
+     * Get the value of tueMids.
      *
-     * @return the value of tueMids
+     * @return the value of tueMids.
      */
     public ShiftMids getTueMids() {
         return tueMids;
     }
 
     /**
-     * Set the value of tueMids
+     * Set the value of tueMids.
      *
-     * @param newVar the new value of tueMids
+     * @param tueMids the new value of tueMids.
      */
-    public void setTueMids(ShiftMids newVar) {
-        tueMids = newVar;
+    public void setTueMids(ShiftMids tueMids) {
+        this.tueMids = tueMids;
     }
 
     /**
-     * Get the value of wedDays
+     * Get the value of wedDays.
      *
-     * @return the value of wedDays
+     * @return the value of wedDays.
      */
     public ShiftDays getWedDays() {
         return wedDays;
     }
 
     /**
-     * Set the value of wedDays
+     * Set the value of wedDays.
      *
-     * @param newVar the new value of wedDays
+     * @param wedDays the new value of wedDays.
      */
-    public void setWedDays(ShiftDays newVar) {
-        wedDays = newVar;
+    public void setWedDays(ShiftDays wedDays) {
+        this.wedDays = wedDays;
     }
 
     /**
-     * Get the value of wedSwings
+     * Get the value of wedSwings.
      *
-     * @return the value of wedSwings
+     * @return the value of wedSwings.
      */
     public ShiftSwings getWedSwings() {
         return wedSwings;
     }
 
     /**
-     * Set the value of wedSwings
+     * Set the value of wedSwings.
      *
-     * @param newVar the new value of wedSwings
+     * @param wedSwings the new value of wedSwings.
      */
-    public void setWedSwings(ShiftSwings newVar) {
-        wedSwings = newVar;
+    public void setWedSwings(ShiftSwings wedSwings) {
+        this.wedSwings = wedSwings;
     }
 
     /**
-     * Get the value of wedMids
+     * Get the value of wedMids.
      *
-     * @return the value of wedMids
+     * @return the value of wedMids.
      */
     public ShiftMids getWedMids() {
         return wedMids;
     }
 
     /**
-     * Set the value of wedMids
+     * Set the value of wedMids.
      *
-     * @param newVar the new value of wedMids
+     * @param wedMids the new value of wedMids.
      */
-    public void setWedMids(ShiftMids newVar) {
-        wedMids = newVar;
+    public void setWedMids(ShiftMids wedMids) {
+        this.wedMids = wedMids;
     }
 
     /**
-     * Get the value of thuDays
+     * Get the value of thuDays.
      *
-     * @return the value of thuDays
+     * @return the value of thuDays.
      */
     public ShiftDays getThuDays() {
         return thuDays;
     }
 
     /**
-     * Set the value of thuDays
+     * Set the value of thuDays.
      *
-     * @param newVar the new value of thuDays
+     * @param thuDays the new value of thuDays.
      */
-    public void setThuDays(ShiftDays newVar) {
-        thuDays = newVar;
+    public void setThuDays(ShiftDays thuDays) {
+        this.thuDays = thuDays;
     }
 
     /**
-     * Get the value of thuSwings
+     * Get the value of thuSwings.
      *
-     * @return the value of thuSwings
+     * @return the value of thuSwings.
      */
     public ShiftSwings getThuSwings() {
         return thuSwings;
     }
 
     /**
-     * Set the value of thuSwings
+     * Set the value of thuSwings.
      *
-     * @param newVar the new value of thuSwings
+     * @param thuSwings the new value of thuSwings.
      */
-    public void setThuSwings(ShiftSwings newVar) {
-        thuSwings = newVar;
+    public void setThuSwings(ShiftSwings thuSwings) {
+        this.thuSwings = thuSwings;
     }
 
     /**
-     * Get the value of thuMids
+     * Get the value of thuMids.
      *
-     * @return the value of thuMids
+     * @return the value of thuMids.
      */
     public ShiftMids getThuMids() {
         return thuMids;
     }
 
     /**
-     * Set the value of thuMids
+     * Set the value of thuMids.
      *
-     * @param newVar the new value of thuMids
+     * @param thuMids the new value of thuMids.
      */
-    public void setThuMids(ShiftMids newVar) {
-        thuMids = newVar;
+    public void setThuMids(ShiftMids thuMids) {
+        this.thuMids = thuMids;
     }
 
     /**
-     * Get the value of friDays
+     * Get the value of friDays.
      *
-     * @return the value of friDays
+     * @return the value of friDays.
      */
     public ShiftDays getFriDays() {
         return friDays;
     }
 
     /**
-     * Set the value of friDays
+     * Set the value of friDays.
      *
-     * @param newVar the new value of friDays
+     * @param friDays the new value of friDays.
      */
-    public void setFriDays(ShiftDays newVar) {
-        friDays = newVar;
+    public void setFriDays(ShiftDays friDays) {
+        this.friDays = friDays;
     }
 
     /**
-     * Get the value of friSwings
+     * Get the value of friSwings.
      *
-     * @return the value of friSwings
+     * @return the value of friSwings.
      */
     public ShiftSwings getFriSwings() {
         return friSwings;
     }
 
     /**
-     * Set the value of friSwings
+     * Set the value of friSwings.
      *
-     * @param newVar the new value of friSwings
+     * @param friSwings the new value of friSwings.
      */
-    public void setFriSwings(ShiftSwings newVar) {
-        friSwings = newVar;
+    public void setFriSwings(ShiftSwings friSwings) {
+        this.friSwings = friSwings;
     }
 
     /**
-     * Get the value of friMids
+     * Get the value of friMids.
      *
-     * @return the value of friMids
+     * @return the value of friMids.
      */
     public ShiftMids getFriMids() {
         return friMids;
     }
 
     /**
-     * Set the value of friMids
+     * Set the value of friMids.
      *
-     * @param newVar the new value of friMids
+     * @param friMids the new value of friMids.
      */
-    public void setFriMids(ShiftMids newVar) {
-        friMids = newVar;
+    public void setFriMids(ShiftMids friMids) {
+        this.friMids = friMids;
     }
 
     /**
-     * Get the value of satDays
+     * Get the value of satDays.
      *
-     * @return the value of satDays
+     * @return the value of satDays.
      */
     public ShiftDays getSatDays() {
         return satDays;
     }
 
     /**
-     * Set the value of satDays
+     * Set the value of satDays.
      *
-     * @param newVar the new value of satDays
+     * @param satDays the new value of satDays.
      */
-    public void setSatDays(ShiftDays newVar) {
-        satDays = newVar;
+    public void setSatDays(ShiftDays satDays) {
+        this.satDays = satDays;
     }
 
     /**
-     * Get the value of satSwings
+     * Get the value of satSwings.
      *
-     * @return the value of satSwings
+     * @return the value of satSwings.
      */
     public ShiftSwings getSatSwings() {
         return satSwings;
     }
 
     /**
-     * Set the value of satSwings
+     * Set the value of satSwings.
      *
-     * @param newVar the new value of satSwings
+     * @param satSwings the new value of satSwings.
      */
-    public void setSatSwings(ShiftSwings newVar) {
-        satSwings = newVar;
+    public void setSatSwings(ShiftSwings satSwings) {
+        this.satSwings = satSwings;
     }
 
     /**
-     * Get the value of satMids
+     * Get the value of satMids.
      *
-     * @return the value of satMids
+     * @return the value of satMids.
      */
     public ShiftMids getSatMids() {
         return satMids;
     }
 
     /**
-     * Set the value of satMids
+     * Set the value of satMids.
      *
-     * @param newVar the new value of satMids
+     * @param satMids the new value of satMids.
      */
-    public void setSatMids(ShiftMids newVar) {
-        satMids = newVar;
+    public void setSatMids(ShiftMids satMids) {
+        this.satMids = satMids;
     }
 
     //
     // Other methods
     //
-
-    /**
-     * @param dayOfWeek
-     * @param shiftTime
-     * @return Shift
-     */
-    public Shift getShift(DayOfWeek dayOfWeek, ShiftTime shiftTime) {
-        return null;
-    }
-
-    /**
-     * @param shift
-     */
-    public void setShift(Shift shift) {
-    }
-
-    /**
-     * @return double
-     */
-    public double calcTotalHours() {
-        return 0;
-    }
-
 
 }
