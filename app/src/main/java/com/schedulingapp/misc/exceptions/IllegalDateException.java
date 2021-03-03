@@ -1,8 +1,8 @@
 package com.schedulingapp.misc.exceptions;
 
 /**
- * A class that represents any time a date is created that does not correspond to a date
- * on the Gregorian Calendar.
+ * A class representing an error to be thrown when a date is created that does not
+ * correspond to a date on the Gregorian Calendar.
  *
  * @author Benjamin Corder
  * @version 1.0
