@@ -1,6 +1,8 @@
 package com.schedulingapp.model.employee;
 
+import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
+import com.schedulingapp.misc.ShiftTime;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
@@ -21,6 +23,7 @@ abstract public class Employee {
     protected final Gender gender;
     protected Availability availability;
     protected PayPeriod workSchedule;
+    protected boolean isApprovedOvertime;
 
     //
     // Constructors
@@ -37,6 +40,7 @@ abstract public class Employee {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
+        isApprovedOvertime = false;
         validate();
     }
 
@@ -51,6 +55,10 @@ abstract public class Employee {
         gender = rhs.getGender();
         availability = new Availability(rhs.getAvailability());
         workSchedule = new PayPeriod(rhs.getWorkSchedule());
+        isApprovedOvertime = false;
+
+        // Redundant validation
+        validate();
     }
 
     //
@@ -142,9 +150,41 @@ abstract public class Employee {
         this.workSchedule = workSchedule;
     }
 
+    /**
+     * Get the value of isApprovedOvertime.
+     *
+     * @return the value of isApprovedOvertime.
+     */
+    public boolean getIsApprovedOvertime() {
+        return isApprovedOvertime;
+    }
+
+    /**
+     * Set the value of isApprovedOvertime.
+     *
+     * @param isApprovedOvertime the new value of isApprovedOvertime.
+     */
+    public void setIsApprovedOvertime(boolean isApprovedOvertime) {
+        this.isApprovedOvertime = isApprovedOvertime;
+    }
+
     //
     // Other methods
     //
+
+    /**
+     * Returns the employment type of the employee.
+     *
+     * @return employment type of employee.
+     */
+    abstract public EmploymentType getEmploymentType();
+
+    /**
+     * Returns the maximum number of hours the employee can work in a week.
+     *
+     * @return the maximum number of hours the employee can work in a week.
+     */
+    abstract public int getMaxHours();
 
     /**
      * Ensures that the member variables of the current object make sense.
