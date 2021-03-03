@@ -44,7 +44,14 @@ public class Availability {
      * @param rhs Availability object to create a copy of.
      */
     public Availability(Availability rhs) {
+        startDate = rhs.getStartDate();
 
+        try {
+            setAvailabilities(rhs.availabilities);
+        } catch (DateOutOfBoundsException e) {
+            // Should never throw an error
+            e.printStackTrace();
+        }
     }
 
     //
@@ -116,9 +123,8 @@ public class Availability {
      * Get the value of startDate.
      *
      * @return the value of startDate
-     * @throws IllegalStartDateException if date is not a valid start date.
      */
-    public Date getStartDate() throws IllegalStartDateException {
+    public Date getStartDate() {
         return startDate;
     }
 
