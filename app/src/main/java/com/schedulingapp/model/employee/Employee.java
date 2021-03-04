@@ -2,7 +2,7 @@ package com.schedulingapp.model.employee;
 
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
-import com.schedulingapp.misc.ShiftTime;
+import com.schedulingapp.misc.exceptions.IllegalDateException;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
@@ -49,7 +49,7 @@ abstract public class Employee {
      *
      * @param rhs object to make a copy of.
      */
-    public Employee(Employee rhs) {
+    public Employee(Employee rhs) throws IllegalDateException {
         this.firstName = rhs.getFirstName();
         this.lastName = rhs.getLastName();
         gender = rhs.getGender();

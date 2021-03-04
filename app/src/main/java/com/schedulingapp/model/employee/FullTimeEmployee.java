@@ -2,6 +2,7 @@ package com.schedulingapp.model.employee;
 
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
+import com.schedulingapp.misc.exceptions.IllegalDateException;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
@@ -40,7 +41,7 @@ public class FullTimeEmployee extends Employee {
      *
      * @param rhs object to create a copy of.
      */
-    public FullTimeEmployee(FullTimeEmployee rhs) {
+    public FullTimeEmployee(FullTimeEmployee rhs) throws IllegalDateException {
         super(rhs);
     }
 

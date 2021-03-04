@@ -2,6 +2,7 @@ package com.schedulingapp.model.employee;
 
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
+import com.schedulingapp.misc.exceptions.IllegalDateException;
 
 /**
  * A class representing a reserve employee.
@@ -38,7 +39,7 @@ public class ReserveEmployee extends Employee {
      *
      * @param rhs object to create a copy of.
      */
-    public ReserveEmployee(FullTimeEmployee rhs) {
+    public ReserveEmployee(FullTimeEmployee rhs) throws IllegalDateException {
         super(rhs);
     }
 
