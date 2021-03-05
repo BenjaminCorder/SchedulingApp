@@ -1,8 +1,9 @@
 package com.schedulingapp.model.employee;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
-import com.schedulingapp.misc.exceptions.IllegalDateException;
+import com.schedulingapp.exceptions.IllegalDateException;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
@@ -42,6 +43,39 @@ abstract public class Employee {
         this.gender = gender;
         isApprovedOvertime = false;
         validate();
+    }
+
+    public Employee(JsonNode employeeNode) {
+        // Extract all information from the employeeNode
+        firstName = employeeNode.get("firstName").toString()
+                .replace("\"", "");
+
+        lastName = employeeNode.get("lastName").toString()
+                .replace("\"", "");
+
+        switch(employeeNode.get("gender").toString()
+                .replace("\"", "")) {
+            case "MALE":
+                gender = Gender.MALE;
+                break;
+            case "FEMALE":
+                gender = Gender.FEMALE;
+                break;
+            default:
+                gender = Gender.GENDER_UNSPECIFIED;
+                break;
+        }
+
+        if (employeeNode.get("availability") != null) {
+            availability = new Availability(employeeNode.get("availability"));
+        }
+
+        if (employeeNode.get("availability") != null) {
+            availability = new Availability(employeeNode.get("availability"));
+        }
+
+        isApprovedOvertime = "true".equals(employeeNode.get("isApprovedOvertime")
+                .toString().replace("\"", ""));
     }
 
     /**

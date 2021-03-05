@@ -1,4 +1,4 @@
-package com.schedulingapp.misc.exceptions;
+package com.schedulingapp.exceptions;
 
 /**
  * A class representing an error to be thrown when a date is created that does not

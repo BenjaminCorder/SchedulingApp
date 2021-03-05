@@ -1,8 +1,9 @@
 package com.schedulingapp.model.employee;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.schedulingapp.misc.Date;
-import com.schedulingapp.misc.exceptions.DateOutOfBoundsException;
-import com.schedulingapp.misc.exceptions.IllegalStartDateException;
+import com.schedulingapp.exceptions.DateOutOfBoundsException;
+import com.schedulingapp.exceptions.IllegalStartDateException;
 import com.schedulingapp.model.shift.Shift;
 
 import java.util.List;
@@ -36,6 +37,9 @@ public class Availability {
      */
     public Availability(Date startDate) throws IllegalStartDateException {
 
+    }
+
+    public Availability(JsonNode availabilityNode) {
     }
 
     /**

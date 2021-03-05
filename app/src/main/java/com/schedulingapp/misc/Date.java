@@ -2,7 +2,7 @@ package com.schedulingapp.misc;
 
 import androidx.annotation.NonNull;
 
-import com.schedulingapp.misc.exceptions.IllegalDateException;
+import com.schedulingapp.exceptions.IllegalDateException;
 
 /**
  * A class for representing a date.
