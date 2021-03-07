@@ -1,5 +1,7 @@
 package com.schedulingapp.view;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * An interface representing all methods shared by a View class.
  *
@@ -19,4 +21,5 @@ public interface BaseView<T> {
      * @param presenter presenter associated with the current object.
      */
     void setPresenter(T presenter);
+    AppCompatActivity getActivity();
 }

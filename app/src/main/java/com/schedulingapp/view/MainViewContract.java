@@ -1,5 +1,11 @@
 package com.schedulingapp.view;
 
+import android.content.Intent;
+import android.view.View;
+
+import androidx.annotation.Nullable;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.schedulingapp.presenter.MainPresenter;
 
 /**
@@ -15,9 +21,27 @@ public interface MainViewContract extends BaseView<MainPresenter> {
     // Fields
     //
 
+    //
+    // Activity Methods
+    //
+
+    void onClick(View v);
+    void onActivityResult(int requestCode, int resultCode, Intent data);
 
     //
-    // Methods
+    // UI Methods
+    //
+
+    void updateUi(@Nullable GoogleSignInAccount account);
+
+    //
+    // Intent Methods
+    //
+
+    void startSignInActivity(Intent signInIntent);
+
+    //
+    // Other Methods
     //
 
 }
