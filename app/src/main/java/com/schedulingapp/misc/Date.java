@@ -4,6 +4,10 @@ import androidx.annotation.NonNull;
 
 import com.schedulingapp.exceptions.IllegalDateException;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+
 /**
  * A class for representing a date.
  *
@@ -11,7 +15,7 @@ import com.schedulingapp.exceptions.IllegalDateException;
  * @version 1.0
  * @since 1.0
  */
-public class Date {
+public class Date extends java.util.Date {
 
     //
     // Fields
@@ -298,6 +302,20 @@ public class Date {
         return dayOfWeek;
     }
 
+    /**
+     * increments a date by 1 day
+     * returns date
+     */
+    private Date addOneDay(Date date) throws IllegalDateException {
+        Date dt = new Date(date);
+        //test purpose
+        System.out.println("before = " + dt);
+        Calendar c = Calendar.getInstance();
+        c.setTime(dt);
+        c.add(Calendar.DATE, 1);
+        dt = (Date) c.getTime();
+        return dt;
+    }
     /**
      * Makes sure that the date represented by the current object corresponds to a real
      * date.

@@ -4,8 +4,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.schedulingapp.misc.Date;
 import com.schedulingapp.exceptions.DateOutOfBoundsException;
 import com.schedulingapp.exceptions.IllegalStartDateException;
+import com.schedulingapp.misc.DayOfWeek;
 import com.schedulingapp.model.shift.Shift;
+import com.schedulingapp.model.shift.ShiftDays;
+import com.schedulingapp.model.shift.ShiftMids;
+import com.schedulingapp.model.shift.ShiftSwings;
 
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -73,6 +79,7 @@ public class Availability {
      */
     public boolean checkAvailability(Shift shift)
             throws DateOutOfBoundsException {
+
         return true;
     }
 
@@ -197,6 +204,30 @@ public class Availability {
      */
     private Map<Shift, Boolean> createDefaultAvailability(Date startDate)
             throws IllegalStartDateException {
+        Map<Object, Boolean> availableMap = new HashMap<Object, Boolean>();
+        String s = "shift";
+        Date d = startDate;
+        //need to connect the function to add day from date class
+        for(int i = 0; i < 15; i++){
+            //create new shift obj
+            ShiftDays shiftDays = new ShiftDays(d);
+            ShiftMids shiftMids = new ShiftMids(d);
+            ShiftSwings shiftSwings = new ShiftSwings(d);
+
+            //adding to hashmap with object(date) key and boolean value
+            availableMap.put(shiftDays, false);
+            availableMap.put(shiftMids, false);
+            availableMap.put(shiftSwings, false);
+
+            //adding one day to the given date.
+            Calendar c = Calendar.getInstance();
+            c.setTime(startDate);
+            c.add(Calendar.DATE, 1);
+            d = (Date) c.getTime();
+
+
+        }
+        //figure out return type "return availableMap"
         return null;
     }
 
@@ -208,7 +239,10 @@ public class Availability {
      * @throws DateOutOfBoundsException if shift corresponds to a date outside of the pay
      *                                  period the current object covers.
      */
-    private void validateShift(Shift shift) throws DateOutOfBoundsException {
+    private void validateShift(Shift shift, HashMap<Object, Boolean> hashMap) throws DateOutOfBoundsException {
+        HashMap hmap = hashMap;
+        System.out.println("The current shift falls within the pay period " +  hmap.containsKey(shift));
+
 
     }
 
@@ -219,6 +253,23 @@ public class Availability {
      * @throws IllegalStartDateException if date is not a valid start date.
      */
     private void validateStartDate(Date date) throws IllegalStartDateException {
+        DayOfWeek startDay = DayOfWeek.SUNDAY;
 
+        Boolean valid = false;
+        Date d = date;
+        int year = 0;
+        int day = 0;
+        int month = 0;
+        Calendar c = Calendar.getInstance();
+        c.setTime(d);
+        year = c.get(Calendar.YEAR);
+        month = c.get(Calendar.MONTH);
+        day = c.get(Calendar.DAY_OF_MONTH);
+        /*
+        int dayNumber = d.calcDayOfWeek(day, month, year);
+        String weekday = intToDayOfWeek(dayNumber);
+        if(startDay == weekday){
+        valid = true;
+         */
     }
 }
