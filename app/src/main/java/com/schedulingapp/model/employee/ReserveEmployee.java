@@ -1,7 +1,9 @@
 package com.schedulingapp.model.employee;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
+import com.schedulingapp.exceptions.IllegalDateException;
 
 /**
  * A class representing a reserve employee.
@@ -33,12 +35,16 @@ public class ReserveEmployee extends Employee {
         super(firstName, lastName, gender);
     }
 
+    public ReserveEmployee(JsonNode employeeNode) {
+        super(employeeNode);
+    }
+
     /**
      * Copy Constructor.
      *
      * @param rhs object to create a copy of.
      */
-    public ReserveEmployee(FullTimeEmployee rhs) {
+    public ReserveEmployee(FullTimeEmployee rhs) throws IllegalDateException {
         super(rhs);
     }
 

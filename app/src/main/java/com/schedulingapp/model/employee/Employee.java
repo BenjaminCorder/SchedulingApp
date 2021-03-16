@@ -1,8 +1,9 @@
 package com.schedulingapp.model.employee;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
-import com.schedulingapp.misc.ShiftTime;
+import com.schedulingapp.exceptions.IllegalDateException;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
@@ -44,12 +45,45 @@ abstract public class Employee {
         validate();
     }
 
+    public Employee(JsonNode employeeNode) {
+        // Extract all information from the employeeNode
+        firstName = employeeNode.get("firstName").toString()
+                .replace("\"", "");
+
+        lastName = employeeNode.get("lastName").toString()
+                .replace("\"", "");
+
+        switch(employeeNode.get("gender").toString()
+                .replace("\"", "")) {
+            case "MALE":
+                gender = Gender.MALE;
+                break;
+            case "FEMALE":
+                gender = Gender.FEMALE;
+                break;
+            default:
+                gender = Gender.GENDER_UNSPECIFIED;
+                break;
+        }
+
+        if (employeeNode.get("availability") != null) {
+            availability = new Availability(employeeNode.get("availability"));
+        }
+
+        if (employeeNode.get("availability") != null) {
+            availability = new Availability(employeeNode.get("availability"));
+        }
+
+        isApprovedOvertime = "true".equals(employeeNode.get("isApprovedOvertime")
+                .toString().replace("\"", ""));
+    }
+
     /**
      * Copy Constructor.
      *
      * @param rhs object to make a copy of.
      */
-    public Employee(Employee rhs) {
+    public Employee(Employee rhs) throws IllegalDateException {
         this.firstName = rhs.getFirstName();
         this.lastName = rhs.getLastName();
         gender = rhs.getGender();
