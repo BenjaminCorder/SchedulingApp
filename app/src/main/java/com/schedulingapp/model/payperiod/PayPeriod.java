@@ -8,7 +8,7 @@ import com.schedulingapp.model.shift.Shift;
 /**
  * A class representing a pay period of two weeks.
  *
- * @author Ben Corder
+ * @author Ben Corder, Kylan Rice
  * @version 1.0
  * @since 1.0
  */
@@ -18,7 +18,7 @@ public class PayPeriod {
     // Fields
     //
 
-    private final Date startDate;
+    private Date startDate;
     private WorkWeek weekFirst;
     private WorkWeek weekSecond;
 
@@ -31,9 +31,8 @@ public class PayPeriod {
      *
      * @param startDate date the PayPeriod begins on.
      */
-    public PayPeriod(Date startDate) {
-        this.startDate = startDate;
-        validatePayPeriod();
+    public PayPeriod() {
+
     }
 
     /**
@@ -43,11 +42,15 @@ public class PayPeriod {
      * @throws IllegalDateException If the object represents a date that does not
      *                              on the Gregorian Calendar.
      */
-    public PayPeriod(PayPeriod rhs) throws IllegalDateException {
-        this.startDate = new Date(rhs.getStartDate());
-        weekFirst = new WorkWeek(rhs.getWeekFirst());
-        weekSecond = new WorkWeek(rhs.getWeekSecond());
+
+
+    public PayPeriod(Date x, WorkWeek y, WorkWeek z) throws IllegalDateException {
+        startDate = x;
+        weekFirst = y;
+        weekSecond = z;
     }
+
+
 
     //
     // Methods
@@ -61,7 +64,10 @@ public class PayPeriod {
      * @return Shift
      */
     public Shift getShift(Date date, ShiftTime shiftTime) {
-        return null;
+        //Shift x = new Shift(date, shiftTime); - this needs to be completed in shift first
+        Shift x = null; //remove this once above line is functional
+
+        return x;
     }
 
 
@@ -70,7 +76,10 @@ public class PayPeriod {
      *
      * @param shift new value for shift.
      */
+
     public void setShift(Shift shift) {
+        Shift x = shift;
+
     }
 
 
@@ -80,6 +89,7 @@ public class PayPeriod {
      * @return the total number of hours worked this pay period.
      */
     public double getTotalHours() {
+
         return 0;
     }
 
@@ -94,6 +104,10 @@ public class PayPeriod {
      */
     public Date getStartDate() {
         return startDate;
+    }
+
+    public void setStartDate(Date newVar) {
+        startDate = newVar;
     }
 
     /**
@@ -137,7 +151,7 @@ public class PayPeriod {
     //
 
     /**
-     * Calculates the end date of the pay period based on the start date.
+     *      * Calculates the end date of the pay period based on the start date.
      */
     private Date calcEndDate() {
         return null;

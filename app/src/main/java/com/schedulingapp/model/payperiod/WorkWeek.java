@@ -10,7 +10,7 @@ import com.schedulingapp.model.shift.ShiftSwings;
 /**
  * A class representing a work week.
  *
- * @author Ben Corder
+ * @author Ben Corder, Kylan Rice
  * @version 1.0
  * @since 1.0
  */
@@ -19,8 +19,7 @@ public class WorkWeek {
     //
     // Fields
     //
-
-    private final Date startDate;
+    private Date startDate;
     private ShiftDays sunDays;
     private ShiftSwings sunSwings;
     private ShiftMids sunMids;
@@ -52,29 +51,8 @@ public class WorkWeek {
      *
      * @param startDate date the work week begins on.
      */
-    public WorkWeek(Date startDate) {
-        this.startDate = startDate;
-        sunDays = null;
-        sunSwings = null;
-        sunMids = null;
-        monDays = null;
-        monSwings = null;
-        monMids = null;
-        tueDays = null;
-        tueSwings = null;
-        tueMids = null;
-        wedDays = null;
-        wedSwings = null;
-        wedMids = null;
-        thuDays = null;
-        thuSwings = null;
-        thuMids = null;
-        friDays = null;
-        friSwings = null;
-        friMids = null;
-        satDays = null;
-        satSwings = null;
-        satMids = null;
+    public WorkWeek() {
+
     }
 
 
@@ -83,29 +61,30 @@ public class WorkWeek {
      *
      * @param rhs object to make a copy of.
      */
-    public WorkWeek(WorkWeek rhs) {
-        startDate = rhs.getStartDate();
-        sunDays = rhs.getSunDays();
-        sunSwings = rhs.getSunSwings();
-        sunMids = rhs.getSunMids();
-        monDays = rhs.getMonDays();
-        monSwings = rhs.getMonSwings();
-        monMids = rhs.getMonMids();
-        tueDays = rhs.getTueDays();
-        tueSwings = rhs.getTueSwings();
-        tueMids = rhs.getTueMids();
-        wedDays = rhs.getWedDays();
-        wedSwings = rhs.getWedSwings();
-        wedMids = rhs.getWedMids();
-        thuDays = rhs.getThuDays();
-        thuSwings = rhs.getThuSwings();
-        thuMids = rhs.getThuMids();
-        friDays = rhs.getFriDays();
-        friSwings = rhs.getFriSwings();
-        friMids = rhs.getFriMids();
-        satDays = rhs.getSatDays();
-        satSwings = rhs.getSatSwings();
-        satMids = rhs.getSatMids();
+    public WorkWeek(Date a, ShiftDays b, ShiftSwings c, ShiftMids d, ShiftDays e, ShiftSwings f, ShiftMids g, ShiftDays h, ShiftMids i, ShiftSwings j, ShiftDays k, ShiftMids l,
+    ShiftSwings m, ShiftDays n, ShiftMids o, ShiftSwings p, ShiftDays q, ShiftMids r, ShiftSwings s){
+        startDate = a;
+        sunDays = b;
+        sunSwings = c;
+        sunMids = d;
+        monDays = e;
+        monSwings = f;
+        monMids = d;
+        tueDays = e;
+        tueSwings = f;
+        tueMids = g;
+        wedDays = h;
+        wedSwings = j;
+        wedMids = i;
+        thuDays = k;
+        thuSwings = m;
+        thuMids = l;
+        friDays = n;
+        friSwings = p;
+        friMids = o;
+        satDays = q;
+        satSwings = s;
+        satMids = r;
     }
 
     //
@@ -120,7 +99,8 @@ public class WorkWeek {
      * @return Shift that corresponds to the input date and time.
      */
     public Shift getShift(Date date, ShiftTime shiftTime) {
-        return null;
+        Shift x = null;
+        return x;
     }
 
     /**
@@ -129,6 +109,7 @@ public class WorkWeek {
      * @param shift new shift to replace the shift it corresponds to.
      */
     public void setShift(Shift shift) {
+
     }
 
     /**

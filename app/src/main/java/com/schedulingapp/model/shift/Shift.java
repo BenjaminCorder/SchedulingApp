@@ -17,7 +17,7 @@ abstract public class Shift {
     // Fields
     //
 
-    protected final Date date;
+    protected Date date;
     protected Time startTime;
     protected Time endTime;
 
@@ -44,6 +44,7 @@ abstract public class Shift {
     public Shift(Date date, Time startTime, Time endTime) {
         this.date = date;
     }
+
 
     /**
      * Copy Constructor.
