@@ -1,4 +1,4 @@
-package com.schedulingapp.factory.googlesheets.sheet;
+package com.schedulingapp.factory.googlesheets.sheets;
 
 import com.google.api.services.sheets.v4.model.BandedRange;
 import com.google.api.services.sheets.v4.model.BasicFilter;
@@ -28,14 +28,14 @@ public class SheetFactory implements Factory<Sheet> {
     private List<GridRange> merges;
     private List<ConditionalFormatRule> conditionalFormats;
     private List<FilterView> filterViews;
-    private List<ProtectedRange> protectedRanges; // TODO(user) create Factory
-    private BasicFilter basicFilter; // TODO(user) create Factory
-    private List<EmbeddedChart> charts; // TODO(user) create Factory
-    private List<BandedRange> bandedRanges; // TODO(user) create Factory
-    private List<DeveloperMetadata> developerMetadata; // TODO(user) create Factory
+    private List<ProtectedRange> protectedRanges;
+    private BasicFilter basicFilter;
+    private List<EmbeddedChart> charts;
+    private List<BandedRange> bandedRanges; // TODO Create BandedRangeFactory
+    private List<DeveloperMetadata> developerMetadata; // TODO Create DeveloperMetadataFactory
     private List<DimensionGroup> rowGroups;
     private List<DimensionGroup> columnGroups;
-    private List<Slicer> slicers; // TODO(user) create Factory
+    private List<Slicer> slicers; // TODO Create SlicerFactory
 
     //
     // Constructor

@@ -1,4 +1,4 @@
-package com.schedulingapp.factory.googlesheets.sheet;
+package com.schedulingapp.factory.googlesheets.sheets;
 
 import com.google.api.services.sheets.v4.model.Color;
 import com.google.api.services.sheets.v4.model.ColorStyle;

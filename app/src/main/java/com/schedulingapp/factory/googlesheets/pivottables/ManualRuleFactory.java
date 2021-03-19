@@ -1,4 +1,4 @@
-package com.schedulingapp.factory.googlesheets.pivottable;
+package com.schedulingapp.factory.googlesheets.pivottables;
 
 import com.google.api.services.sheets.v4.model.ManualRule;
 import com.google.api.services.sheets.v4.model.ManualRuleGroup;

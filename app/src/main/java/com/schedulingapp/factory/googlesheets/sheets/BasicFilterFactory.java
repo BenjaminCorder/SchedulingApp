@@ -1,7 +1,7 @@
-package com.schedulingapp.factory.googlesheets.sheet;
+package com.schedulingapp.factory.googlesheets.sheets;
 
+import com.google.api.services.sheets.v4.model.BasicFilter;
 import com.google.api.services.sheets.v4.model.FilterCriteria;
-import com.google.api.services.sheets.v4.model.FilterView;
 import com.google.api.services.sheets.v4.model.GridRange;
 import com.google.api.services.sheets.v4.model.SortSpec;
 import com.schedulingapp.factory.Factory;
@@ -11,15 +11,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FilterViewFactory implements Factory<FilterView> {
+public class BasicFilterFactory implements Factory<BasicFilter> {
     //
     // Fields
     //
 
-    private Integer filterViewId;
-    private String title;
     private GridRange range;
-    private String namedRangeId;
     private List<SortSpec> sortSpecs;
     private Map<String, FilterCriteria> criteria;
 
@@ -27,11 +24,8 @@ public class FilterViewFactory implements Factory<FilterView> {
     // Constructor
     //
 
-    public FilterViewFactory() {
-        filterViewId = null;
-        title = null;
+    public BasicFilterFactory() {
         range = null;
-        namedRangeId = null;
         sortSpecs = new ArrayList<>();
         criteria = new HashMap<>();
     }
@@ -41,56 +35,32 @@ public class FilterViewFactory implements Factory<FilterView> {
     //
 
     @Override
-    public FilterView generate() {
+    public BasicFilter generate() {
         // Declare Variables
-        FilterView view = new FilterView();
+        BasicFilter filter = new BasicFilter();
 
-        // Format view
-        if(filterViewId != null) {
-            view.setFilterViewId(filterViewId);
-        }
-
-        if(title != null) {
-            view.setTitle(title);
-        }
-
+        // Format filter
         if(range != null) {
-            view.setRange(range);
-        }
-
-        if(namedRangeId != null) {
-            view.setNamedRangeId(namedRangeId);
+            filter.setRange(range);
         }
 
         if(!sortSpecs.isEmpty()) {
-            view.setSortSpecs(sortSpecs);
+            filter.setSortSpecs(sortSpecs);
         }
 
         if(!criteria.isEmpty()) {
-            view.setCriteria(criteria);
+            filter.setCriteria(criteria);
         }
 
-        return view;
+        return filter;
     }
 
     //
     // Accessor Methods
     //
 
-    public void setFilterViewId(Integer filterViewId) {
-        this.filterViewId = filterViewId;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public void setRange(GridRange range) {
         this.range = range;
-    }
-
-    public void setNamedRangeId(String namedRangeId) {
-        this.namedRangeId = namedRangeId;
     }
 
     public void setSortSpecs(List<SortSpec> sortSpecs) {
