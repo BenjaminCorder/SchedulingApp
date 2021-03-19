@@ -18,7 +18,7 @@ public class SpreadsheetFactory implements Factory<Spreadsheet> {
     private String spreadsheetId;
     private SpreadsheetProperties properties;
     private List<Sheet> sheets;
-    private List<NamedRange> namedRanges;
+    private List<NamedRange> namedRanges; // TODO(user) Create Factory
     private String spreadsheetUrl;
     private List<DeveloperMetadata> developerMetadata;
 
