@@ -1,9 +1,8 @@
 package com.schedulingapp.model.payperiod;
 
 import com.schedulingapp.misc.Date;
-import com.schedulingapp.misc.DayOfWeek;
 import com.schedulingapp.misc.ShiftTime;
-import com.schedulingapp.misc.exceptions.IllegalDateException;
+import com.schedulingapp.exceptions.IllegalDateException;
 import com.schedulingapp.model.shift.Shift;
 
 /**

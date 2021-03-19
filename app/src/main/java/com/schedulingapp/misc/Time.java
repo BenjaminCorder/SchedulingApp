@@ -1,6 +1,6 @@
 package com.schedulingapp.misc;
 
-import com.schedulingapp.misc.exceptions.IllegalTimeException;
+import com.schedulingapp.exceptions.IllegalTimeException;
 
 /**
  * A class representing a time.

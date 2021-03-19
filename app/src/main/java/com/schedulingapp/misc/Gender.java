@@ -11,7 +11,21 @@ package com.schedulingapp.misc;
  * @since 1.0
  */
 public enum Gender {
-    GENDER_UNSPECIFIED,
-    MALE,
-    FEMALE
+    GENDER_UNSPECIFIED("GENDER_UNSPECIFIED"),
+    MALE("MALE"),
+    FEMALE("FEMALE");
+
+    private final String gender;
+
+    Gender() {
+        this.gender = "GENDER_UNSPECIFIED";
+    }
+
+    Gender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getGender() {
+        return gender;
+    }
 }

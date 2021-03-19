@@ -3,8 +3,6 @@ package com.schedulingapp.model.shift;
 import com.schedulingapp.misc.Date;
 import com.schedulingapp.misc.ShiftTime;
 import com.schedulingapp.misc.Time;
-import com.schedulingapp.misc.exceptions.IllegalDateException;
-import com.schedulingapp.misc.exceptions.IllegalTimeException;
 
 /**
  * An abstract class representing all information shared across all types of shifts.

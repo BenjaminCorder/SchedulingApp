@@ -1,7 +1,9 @@
 package com.schedulingapp.model.employee;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
+import com.schedulingapp.exceptions.IllegalDateException;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
@@ -35,12 +37,16 @@ public class PartTimeEmployee extends Employee {
         super(firstName, lastName, gender);
     }
 
+    public PartTimeEmployee(JsonNode employeeNode) {
+        super(employeeNode);
+    }
+
     /**
      * Copy Constructor.
      *
      * @param rhs object to create a copy of.
      */
-    public PartTimeEmployee(FullTimeEmployee rhs) {
+    public PartTimeEmployee(FullTimeEmployee rhs) throws IllegalDateException {
         super(rhs);
     }
 
