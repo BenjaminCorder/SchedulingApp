@@ -28,14 +28,14 @@ public class SheetFactory implements Factory<Sheet> {
     private List<GridRange> merges;
     private List<ConditionalFormatRule> conditionalFormats;
     private List<FilterView> filterViews;
-    private List<ProtectedRange> protectedRanges;
-    private BasicFilter basicFilter;
-    private List<EmbeddedChart> charts;
-    private List<BandedRange> bandedRanges;
-    private List<DeveloperMetadata> developerMetadata;
+    private List<ProtectedRange> protectedRanges; // TODO(user) create Factory
+    private BasicFilter basicFilter; // TODO(user) create Factory
+    private List<EmbeddedChart> charts; // TODO(user) create Factory
+    private List<BandedRange> bandedRanges; // TODO(user) create Factory
+    private List<DeveloperMetadata> developerMetadata; // TODO(user) create Factory
     private List<DimensionGroup> rowGroups;
     private List<DimensionGroup> columnGroups;
-    private List<Slicer> slicers;
+    private List<Slicer> slicers; // TODO(user) create Factory
 
     //
     // Constructor
