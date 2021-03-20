@@ -7,4 +7,6 @@ package com.schedulingapp.presenter;
  * @since 1.0
  */
 public class MenuPresenter {
+    //varibles
+    
 }
