@@ -50,5 +50,6 @@ public class MenuActivity extends AppCompatActivity  {
     //method to handle logic when View Employee button is clicked
     public void openViewEmployeeActivity(){
         //logic to anddle button click here
+
     }
 }
