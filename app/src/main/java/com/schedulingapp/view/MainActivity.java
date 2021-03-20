@@ -5,10 +5,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInApi;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.Task;
+import com.schedulingapp.MenuActivity;
 import com.schedulingapp.R;
 import com.schedulingapp.presenter.MainPresenter;
 
@@ -18,10 +28,11 @@ import com.schedulingapp.presenter.MainPresenterContract;
  * Class MainActivity
  *
  * @author Ben Corder
+ * @author Cami Wallace
  * @version 1.0
  * @since 1.0
  */
-public class MainActivity extends AppCompatActivity implements MainViewContract {
+public class MainActivity extends AppCompatActivity implements MainViewContract{
 
     //
     // Fields
@@ -31,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements MainViewContract 
 
     private MainPresenterContract presenter;
     private TextView mStatusTextView;
+    //Google sign in btn variables
+    SignInButton signInButton;
+    //Declairing GoogleSignInClient object
+    GoogleSignInClient mGoogleSignInClient;
 
     //
     // Activity Methods
@@ -45,12 +60,43 @@ public class MainActivity extends AppCompatActivity implements MainViewContract 
 
         // Create and attack a presenter
         setPresenter(new MainPresenter(this));
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        // Build a GoogleSignInClient with the options specified by gso.
+           mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        //
+        //possible changes(older version)
+        //googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this)
+        //                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+        //                .build();}
+        SignInButton signInButton = findViewById(R.id.sign_in_button);
+        signInButton.setSize(SignInButton.SIZE_STANDARD);
+
+        //register OnClickListener to sign in when clicked
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
+    }
+    private void signIn(){
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     @Override
     protected void onStart() {
         presenter.onStart();
         super.onStart();
+        //check if user has already signed in to app with Google.
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        updateUi(account);
     }
 
     @Override
@@ -96,12 +142,14 @@ public class MainActivity extends AppCompatActivity implements MainViewContract 
                     R.string.signed_in_fmt, account.getDisplayName()));
 
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+            //may move to different activity
+            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
         } else {
             mStatusTextView.setText(R.string.signed_out);
 
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
+            //may move to different activity
+            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
         }
     }
 
@@ -111,7 +159,13 @@ public class MainActivity extends AppCompatActivity implements MainViewContract 
 
         // Result returned from launching the Intent;
         if (requestCode == RC_SIGN_IN) {
+            //completeSignIn method from presenter calls the handleSignInResult method also located
+            //in the presenter class.
             presenter.completeSignIn(data);
+            //possible change
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
+
         }
     }
 
@@ -140,5 +194,8 @@ public class MainActivity extends AppCompatActivity implements MainViewContract 
         return this;
     }
 
+    public void navigateToMenu(){
+        startActivity(new Intent(MainActivity.this, MenuActivity.class));
+    }
 
 }

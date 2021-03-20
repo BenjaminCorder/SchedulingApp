@@ -59,6 +59,9 @@ dependencies {
     implementation 'com.google.api-client:google-api-client:1.31.3'
     implementation 'com.google.api-client:google-api-client-android:1.30.5'
     implementation 'com.google.apis:google-api-services-sheets:v4-rev612-1.25.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
     // Testing
     testImplementation 'junit:junit:4.13.2'
