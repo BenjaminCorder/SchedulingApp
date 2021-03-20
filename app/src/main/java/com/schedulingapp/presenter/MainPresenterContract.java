@@ -21,5 +21,4 @@ public interface MainPresenterContract extends BasePresenter {
     void saveData();
     void signIn();
     void completeSignIn(Intent data);
-
 }
