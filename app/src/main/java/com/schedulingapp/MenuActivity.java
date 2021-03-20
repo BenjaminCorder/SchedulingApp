@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 import com.schedulingapp.view.AddEmployee;
+import com.schedulingapp.view.MainActivity;
+import com.schedulingapp.view.ViewEmployeeActivity;
 
 public class MenuActivity extends AppCompatActivity  {
 
     //declairing variables
     Button addEmployee;
     Button viewEmployee;
+    Button log_out;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,8 @@ public class MenuActivity extends AppCompatActivity  {
         //setting value to buttons
         addEmployee = (Button) findViewById(R.id.add_employee_btn);
         viewEmployee = (Button) findViewById(R.id.view_employee_btn);
+        log_out = (Button) findViewById(R.id.logoutBtn);
+
         //setting onclick listoner for addEmployee
         addEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +44,14 @@ public class MenuActivity extends AppCompatActivity  {
             }
         });
 
+        //setting onclick listoner for logout
+        log_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
+
     }
 
    //method to open the AddEmployee Activity on button click
@@ -50,6 +63,16 @@ public class MenuActivity extends AppCompatActivity  {
     //method to handle logic when View Employee button is clicked
     public void openViewEmployeeActivity(){
         //logic to anddle button click here
+        Intent intent = new Intent(this, ViewEmployeeActivity.class);
+        startActivity(intent);
+    }
+    //method to log out of app
+    public void logout(){
+        //send back to login in page if logging out
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
+        //may need to add stuf to log out of google
 
     }
 }
