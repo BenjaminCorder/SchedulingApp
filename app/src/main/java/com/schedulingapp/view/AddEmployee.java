@@ -38,7 +38,7 @@ public class AddEmployee extends AppCompatActivity {
         addEmployeeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getShift();
+                getShift();//may not be needed since checking shift before switch
                 getGender();
                 firstName = (EditText) findViewById(R.id.first_name_text);
                 firstName.getText().toString();
@@ -49,6 +49,25 @@ public class AddEmployee extends AppCompatActivity {
                 //use switch w/shift to determine what list you will add your
                 //new employee too.
                 //not sure how we are going to be adding employees to a list
+                int shift = shiftGroup.getCheckedRadioButtonId();
+                switch (shift){
+                    case R.id.full_time_radio_btn:
+                        //add employee to full time list
+
+                        break;
+                    case R.id.part_time_radio_btn:
+                        //add employee to part time list
+
+                        break;
+                    case R.id.reserve_radio_btn:
+                        //add employee to reserve list
+
+                        break;
+                    default:
+                        //It was giving me an error on TAG saying it is a private varibale somewhere else
+                        //Log.d(TAG, "onClick: Error adding Employee");
+                       Toast.makeText(getApplicationContext(), "Error adding employee", Toast.LENGTH_LONG).show();
+                }
 
                 //after employee is added to list direct customer back to menu page
                 navigateToMenu();
