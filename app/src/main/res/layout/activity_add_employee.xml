@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddEmployee"
+    android:background="@color/blue_grey_700">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="150dp">
+
+        <TextView
+
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:gravity="center_horizontal"
+            android:text="@string/add_employee"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp" />
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_employee_type" />
+
+        <RadioGroup
+            android:id="@+id/shift_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+
+
+                <RadioButton
+                    android:id="@+id/full_time_radio_btn"
+                    android:layout_width="127dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/full_time" />
+
+                <RadioButton
+                    android:id="@+id/part_time_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/part_time" />
+
+                <RadioButton
+                    android:id="@+id/reserve_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/reserve" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/spacer2"
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gender" />
+
+        <RadioGroup
+            android:id="@+id/gender_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:background="@android:color/white">
+
+                <RadioButton
+                    android:id="@+id/male_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/female_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/female" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/spacer3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_employee_name" />
+
+        <EditText
+            android:id="@+id/first_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/first_name"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/spacer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/last_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/last_name"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/spacer5"
+            android:layout_width="match_parent"
+            android:layout_height="65dp" />
+
+        <Button
+            android:id="@+id/submit_employee_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/add_employee"
+            android:textColor="@android:color/black"
+            app:backgroundTint="@color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,34 @@
     <!-- Button labels -->
     <string name="sign_out">Sign Out</string>
     <string name="disconnect">Disconnect</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="add_employee">Add Employee</string>
+    <string name="menu">Menu</string>
+    <string name="employee">Employee</string>
+    <string name="view_employee">View Employee</string>
+    <string name="schedule">Schedule</string>
+    <string name="create_schedule">Create Schedule</string>
+    <string name="view_schedule">View Schedule</string>
+    <string name="email_schedule_to_employees">Email Schedule To Employees</string>
+    <string name="select_employee_type">Select Employee Type</string>
+    <string name="gender">Gender</string>
+    <string name="enter_employee_name">Enter Employee Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="full_time">Full-Time</string>
+    <string name="part_time">Part-Time</string>
+    <string name="reserve">Reserve</string>
 
     <!-- Content Description for images -->
 
