@@ -41,7 +41,7 @@ public class FilterViewFactory implements Factory<FilterView> {
     //
 
     @Override
-    public FilterView generate() {
+    public FilterView build() {
         // Declare Variables
         FilterView view = new FilterView();
 

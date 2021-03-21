@@ -52,7 +52,7 @@ public class CellFormatFactory implements Factory<CellFormat> {
     //
 
     @Override
-    public CellFormat generate() {
+    public CellFormat build() {
         // Declare Variables
         CellFormat cellFormat = new CellFormat();
 

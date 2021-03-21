@@ -29,7 +29,7 @@ public class ColorFactory implements Factory<Color> {
     //
 
     @Override
-    public Color generate() {
+    public Color build() {
         // Declare Variables
         Color color = new Color();
 

@@ -29,7 +29,7 @@ public class ManualRuleGroupFactory implements Factory<ManualRuleGroup> {
     //
 
     @Override
-    public ManualRuleGroup generate() {
+    public ManualRuleGroup build() {
         // Declare Variables
         ManualRuleGroup group = new ManualRuleGroup();
 

@@ -26,7 +26,7 @@ public class BasicChartDomainFactory implements Factory<BasicChartDomain> {
     //
 
     @Override
-    public BasicChartDomain generate() {
+    public BasicChartDomain build() {
         // Declare Variables
         BasicChartDomain chartDomain = new BasicChartDomain();
 

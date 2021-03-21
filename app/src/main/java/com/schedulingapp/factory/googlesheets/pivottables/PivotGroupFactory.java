@@ -45,7 +45,7 @@ public class PivotGroupFactory implements Factory<PivotGroup> {
     //
 
     @Override
-    public PivotGroup generate() {
+    public PivotGroup build() {
         // Declare Variables
         PivotGroup group = new PivotGroup();
 

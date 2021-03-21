@@ -31,7 +31,7 @@ public class EmbeddedChartFactory implements Factory<EmbeddedChart> {
     //
 
     @Override
-    public EmbeddedChart generate() {
+    public EmbeddedChart build() {
         // Declare Variables
         EmbeddedChart chart = new EmbeddedChart();
 

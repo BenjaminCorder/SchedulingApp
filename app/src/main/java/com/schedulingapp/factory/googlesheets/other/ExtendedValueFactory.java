@@ -31,7 +31,7 @@ public class ExtendedValueFactory implements Factory<ExtendedValue> {
     }
 
     @Override
-    public ExtendedValue generate() {
+    public ExtendedValue build() {
         // Declare Variables
         ExtendedValue extendedValue = new ExtendedValue();
 

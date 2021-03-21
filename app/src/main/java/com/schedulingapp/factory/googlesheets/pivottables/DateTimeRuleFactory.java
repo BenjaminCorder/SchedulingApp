@@ -23,7 +23,7 @@ public class DateTimeRuleFactory implements Factory<DateTimeRule> {
     //
 
     @Override
-    public DateTimeRule generate() {
+    public DateTimeRule build() {
         // Declare Variables
         DateTimeRule rule = new DateTimeRule();
 

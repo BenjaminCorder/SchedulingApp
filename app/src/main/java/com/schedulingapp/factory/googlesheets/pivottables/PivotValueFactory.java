@@ -33,7 +33,7 @@ public class PivotValueFactory implements Factory<PivotValue> {
     }
 
     @Override
-    public PivotValue generate() {
+    public PivotValue build() {
         // Declare Variables
         PivotValue value = new PivotValue();
 

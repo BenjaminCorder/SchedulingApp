@@ -36,7 +36,7 @@ public class GridDataFactory implements Factory<GridData> {
     //
 
     @Override
-    public GridData generate() {
+    public GridData build() {
         // Declare Variables
         GridData gridData = new GridData();
 

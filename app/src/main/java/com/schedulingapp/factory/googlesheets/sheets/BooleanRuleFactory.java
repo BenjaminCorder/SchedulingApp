@@ -27,7 +27,7 @@ public class BooleanRuleFactory implements Factory<BooleanRule> {
     //
 
     @Override
-    public BooleanRule generate() {
+    public BooleanRule build() {
         // Declare Variables
         BooleanRule rule = new BooleanRule();
 

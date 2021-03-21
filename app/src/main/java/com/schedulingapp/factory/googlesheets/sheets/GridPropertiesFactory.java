@@ -35,7 +35,7 @@ public class GridPropertiesFactory implements Factory<GridProperties> {
     //
 
     @Override
-    public GridProperties generate() {
+    public GridProperties build() {
         // Declare Variables
         GridProperties properties = new GridProperties();
 

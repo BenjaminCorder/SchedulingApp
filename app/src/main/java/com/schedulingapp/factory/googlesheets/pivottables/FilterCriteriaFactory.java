@@ -39,7 +39,7 @@ public class FilterCriteriaFactory implements Factory<FilterCriteria> {
     //
 
     @Override
-    public FilterCriteria generate() {
+    public FilterCriteria build() {
         // Declare Variables
         FilterCriteria criteria = new FilterCriteria();
 

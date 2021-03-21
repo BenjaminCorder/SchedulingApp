@@ -17,7 +17,7 @@ public class ErrorValueFactory implements Factory<ErrorValue> {
     }
 
     @Override
-    public ErrorValue generate() {
+    public ErrorValue build() {
         // Declare Variables
         ErrorValue value = new ErrorValue();
 

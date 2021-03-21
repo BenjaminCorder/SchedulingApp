@@ -28,7 +28,7 @@ public class GradientRuleFactory implements Factory<GradientRule> {
     //
 
     @Override
-    public GradientRule generate() {
+    public GradientRule build() {
         // Declare Variables
         GradientRule rule = new GradientRule();
 

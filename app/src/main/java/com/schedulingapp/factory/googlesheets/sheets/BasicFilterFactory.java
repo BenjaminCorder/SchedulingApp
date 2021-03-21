@@ -35,7 +35,7 @@ public class BasicFilterFactory implements Factory<BasicFilter> {
     //
 
     @Override
-    public BasicFilter generate() {
+    public BasicFilter build() {
         // Declare Variables
         BasicFilter filter = new BasicFilter();
 

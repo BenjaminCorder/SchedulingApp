@@ -18,7 +18,7 @@ public class PivotFilterCriteriaFactory implements Factory<PivotFilterCriteria> 
     }
 
     @Override
-    public PivotFilterCriteria generate() {
+    public PivotFilterCriteria build() {
         // Declare Variables
         PivotFilterCriteria criteria = new PivotFilterCriteria();
 

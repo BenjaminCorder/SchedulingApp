@@ -26,7 +26,7 @@ public class ThemeColorPairFactory implements Factory<ThemeColorPair> {
     //
 
     @Override
-    public ThemeColorPair generate() {
+    public ThemeColorPair build() {
         // Declare Variables
         ThemeColorPair themeColorPair = new ThemeColorPair();
 

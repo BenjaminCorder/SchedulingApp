@@ -33,7 +33,7 @@ public class DimensionPropertiesFactory implements Factory<DimensionProperties> 
     //
 
     @Override
-    public DimensionProperties generate() {
+    public DimensionProperties build() {
         // Declare Variables
         DimensionProperties properties = new DimensionProperties();
 

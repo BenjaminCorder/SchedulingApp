@@ -49,7 +49,7 @@ public class CellDataFactory implements Factory<CellData> {
     //
 
     @Override
-    public CellData generate() {
+    public CellData build() {
         // Declare Variables
         CellData data = new CellData();
 

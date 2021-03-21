@@ -56,7 +56,7 @@ public class PivotTableFactory implements Factory<PivotTable> {
     //
 
     @Override
-    public PivotTable generate() {
+    public PivotTable build() {
         // Declare Variables
         PivotTable pivotTable = new PivotTable();
 

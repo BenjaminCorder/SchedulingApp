@@ -27,7 +27,7 @@ public class ManualRuleFactory implements Factory<ManualRule> {
     //
 
     @Override
-    public ManualRule generate() {
+    public ManualRule build() {
         // Declare Variables
         ManualRule rule = new ManualRule();
 

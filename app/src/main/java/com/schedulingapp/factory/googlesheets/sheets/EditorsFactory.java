@@ -30,7 +30,7 @@ public class EditorsFactory implements Factory<Editors> {
     //
 
     @Override
-    public Editors generate() {
+    public Editors build() {
         // Declare Variables
         Editors editors = new Editors();
 

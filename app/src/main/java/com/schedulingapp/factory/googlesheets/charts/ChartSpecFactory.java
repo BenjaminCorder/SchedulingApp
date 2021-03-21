@@ -89,7 +89,7 @@ public class ChartSpecFactory implements Factory<ChartSpec> {
     //
 
     @Override
-    public ChartSpec generate() {
+    public ChartSpec build() {
         // Declare Variables
         ChartSpec spec = new ChartSpec();
 

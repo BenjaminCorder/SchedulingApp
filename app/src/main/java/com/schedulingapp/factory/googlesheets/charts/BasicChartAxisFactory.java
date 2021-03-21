@@ -34,7 +34,7 @@ public class BasicChartAxisFactory implements Factory<BasicChartAxis> {
     //
 
     @Override
-    public BasicChartAxis generate() {
+    public BasicChartAxis build() {
         // Declare Variables
         BasicChartAxis axis = new BasicChartAxis();
 

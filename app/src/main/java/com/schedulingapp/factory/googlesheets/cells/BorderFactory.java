@@ -31,7 +31,7 @@ public class BorderFactory implements Factory<Border> {
     //
 
     @Override
-    public Border generate() {
+    public Border build() {
         // Declare Variables
         Border border = new Border();
 

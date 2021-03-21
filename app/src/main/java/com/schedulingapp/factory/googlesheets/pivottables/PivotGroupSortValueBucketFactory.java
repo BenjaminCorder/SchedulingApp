@@ -26,7 +26,7 @@ public class PivotGroupSortValueBucketFactory
     }
 
     @Override
-    public PivotGroupSortValueBucket generate() {
+    public PivotGroupSortValueBucket build() {
         // Declare Variables
         PivotGroupSortValueBucket bucket = new PivotGroupSortValueBucket();
 

@@ -25,7 +25,7 @@ public class NumberFormatFactory implements Factory<NumberFormat> {
     //
 
     @Override
-    public NumberFormat generate() {
+    public NumberFormat build() {
         // Declare variables
         NumberFormat format = new NumberFormat();
 

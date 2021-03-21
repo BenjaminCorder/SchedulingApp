@@ -18,7 +18,7 @@ public class RowDataFactory implements Factory<RowData> {
     }
 
     @Override
-    public RowData generate() {
+    public RowData build() {
         // Declare Variables
         RowData rowData = new RowData();
 

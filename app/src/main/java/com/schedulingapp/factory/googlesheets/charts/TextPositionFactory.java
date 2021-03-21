@@ -23,7 +23,7 @@ public class TextPositionFactory implements Factory<TextPosition> {
     //
 
     @Override
-    public TextPosition generate() {
+    public TextPosition build() {
         // Declare Variables
         TextPosition textPosition = new TextPosition();
 

@@ -26,7 +26,7 @@ public class IterativeCalculationSettingsFactory
     //
 
     @Override
-    public IterativeCalculationSettings generate() {
+    public IterativeCalculationSettings build() {
         // Declare Variables
         IterativeCalculationSettings iterativeCalculationSettings =
                 new IterativeCalculationSettings();

@@ -42,7 +42,7 @@ public class ProtectedRangeFactory implements Factory<ProtectedRange> {
     //
 
     @Override
-    public ProtectedRange generate() {
+    public ProtectedRange build() {
         // Declare Variables
         ProtectedRange protectedRange = new ProtectedRange();
 

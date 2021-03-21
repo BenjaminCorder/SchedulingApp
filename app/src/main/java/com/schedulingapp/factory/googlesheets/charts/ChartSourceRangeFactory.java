@@ -26,7 +26,7 @@ public class ChartSourceRangeFactory implements Factory<ChartSourceRange> {
     //
 
     @Override
-    public ChartSourceRange generate() {
+    public ChartSourceRange build() {
         // Declare Variables
         ChartSourceRange range = new ChartSourceRange();
 

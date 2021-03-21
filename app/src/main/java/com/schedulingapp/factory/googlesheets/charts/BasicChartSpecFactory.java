@@ -50,7 +50,7 @@ public class BasicChartSpecFactory implements Factory<BasicChartSpec> {
     //
 
     @Override
-    public BasicChartSpec generate() {
+    public BasicChartSpec build() {
         // Declare Variables
         BasicChartSpec chartSpec = new BasicChartSpec();
 

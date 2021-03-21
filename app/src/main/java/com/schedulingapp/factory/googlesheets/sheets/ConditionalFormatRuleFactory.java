@@ -43,7 +43,7 @@ public class ConditionalFormatRuleFactory implements Factory<ConditionalFormatRu
     //
 
     @Override
-    public ConditionalFormatRule generate() {
+    public ConditionalFormatRule build() {
         // Declare Variables
         ConditionalFormatRule rule = new ConditionalFormatRule();
 

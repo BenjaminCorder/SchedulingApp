@@ -29,7 +29,7 @@ public class PivotGroupRuleFactory implements Factory<PivotGroupRule> {
     }
 
     @Override
-    public PivotGroupRule generate() {
+    public PivotGroupRule build() {
         // Declare Variables
         PivotGroupRule pivotGroupRule = new PivotGroupRule();
 

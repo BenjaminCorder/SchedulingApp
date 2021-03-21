@@ -29,7 +29,7 @@ public class InterpolationPointFactory implements Factory<InterpolationPoint> {
     //
 
     @Override
-    public InterpolationPoint generate() {
+    public InterpolationPoint build() {
         // Declare Variables
         InterpolationPoint interpolationPoint = new InterpolationPoint();
 

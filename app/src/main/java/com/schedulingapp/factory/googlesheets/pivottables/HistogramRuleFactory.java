@@ -27,7 +27,7 @@ public class HistogramRuleFactory implements Factory<HistogramRule> {
     //
 
     @Override
-    public HistogramRule generate() {
+    public HistogramRule build() {
         // Declare Variables
         HistogramRule rule = new HistogramRule();
 

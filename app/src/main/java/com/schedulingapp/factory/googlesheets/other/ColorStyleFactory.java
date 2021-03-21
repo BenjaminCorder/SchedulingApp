@@ -33,7 +33,7 @@ public class ColorStyleFactory implements Factory<ColorStyle> {
     //
 
     @Override
-    public ColorStyle generate() {
+    public ColorStyle build() {
         // Declare Variables
         ColorStyle style = new ColorStyle();
 

@@ -36,7 +36,7 @@ public class ChartDataFactory implements Factory<ChartData> {
     //
 
     @Override
-    public ChartData generate() {
+    public ChartData build() {
         // Declare Variables
         ChartData data = new ChartData();
 

@@ -26,7 +26,7 @@ public class PivotGroupValueMetadataFactory implements Factory<PivotGroupValueMe
     //
 
     @Override
-    public PivotGroupValueMetadata generate() {
+    public PivotGroupValueMetadata build() {
         // Declare Variables
         PivotGroupValueMetadata metadata = new PivotGroupValueMetadata();
 

@@ -42,7 +42,7 @@ public class SheetPropertiesFactory implements Factory<SheetProperties> {
     //
 
     @Override
-    public SheetProperties generate() {
+    public SheetProperties build() {
         // Declare Variables
         SheetProperties properties = new SheetProperties();
 

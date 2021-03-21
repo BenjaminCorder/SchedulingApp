@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 
 import com.schedulingapp.exceptions.IllegalDateException;
 
+import java.util.Calendar;
+
 /**
  * A class for representing a date.
  *
@@ -11,13 +13,13 @@ import com.schedulingapp.exceptions.IllegalDateException;
  * @version 1.0
  * @since 1.0
  */
-public class Date {
+public class Date extends Calendar {
 
     //
     // Fields
     //
 
-    private final int day;
+    private int day;
     private final int month;
     private final int year;
     private final DayOfWeek dayOfWeek;
@@ -37,7 +39,7 @@ public class Date {
      * @throws  IllegalDateException    If the object represents a date that does not
      *                                  on the Gregorian Calendar.
      */
-    public Date(int day, int month, int year) throws IllegalDateException{
+    public Date(int day, int month, int year) throws IllegalDateException {
         // Set member variables from input parameters
         this.day = day;
         this.month = month;
@@ -76,6 +78,46 @@ public class Date {
     //
     // Methods
     //
+
+    @Override
+    protected void computeTime() {
+
+    }
+
+    @Override
+    protected void computeFields() {
+
+    }
+
+    @Override
+    public void add(int field, int amount) {
+
+    }
+
+    @Override
+    public void roll(int field, boolean up) {
+
+    }
+
+    @Override
+    public int getMinimum(int field) {
+        return 0;
+    }
+
+    @Override
+    public int getMaximum(int field) {
+        return 0;
+    }
+
+    @Override
+    public int getGreatestMinimum(int field) {
+        return 0;
+    }
+
+    @Override
+    public int getLeastMaximum(int field) {
+        return 0;
+    }
 
     /**
      * Converts the object to a String.
@@ -320,7 +362,7 @@ public class Date {
         //
 
         // Month should only be between 1 and 12
-        if (month < 1 || month > 12) {
+        if (month < 0 || month > 11) {
             throw new IllegalDateException("ERROR: value for month must be between " +
                     "1 and 12.");
         }
@@ -338,74 +380,40 @@ public class Date {
         // Check to make sure day is not outside its month
         String monthText = null;
         switch (month) {
-            case 1: // January
-                if (day > 31) {
-                    monthText = "January";
+            case FEBRUARY: // February
+                // Check to see if it is leap year
+                if ((year % 4) != 0) {
+                    while (day > 29) {
+                        day -= 1;
+                    }
                 }
-                break;
-            case 2: // February
-                if (day > 28) {
-                    // Check to see if it is leap year
-                    if (day != 29 || (year % 4) != 0) {
-                        monthText = "February";
+                else {
+                    while (day > 28) {
+                        day -= 1;
                     }
                 }
                 break;
-            case 3: // March
-                if (day > 31) {
-                    monthText = "March";
-                }
-                break;
-            case 4: // April
-                if (day > 30) {
-                    monthText = "April";
-                }
-                break;
-            case 5: // May
-                if (day > 31) {
-                    monthText = "May";
-                }
-                break;
-            case 6: // June
-                if (day > 30) {
-                    monthText = "June";
-                }
-                break;
-            case 7: // July
-                if (day > 31) {
-                    monthText = "July";
-                }
-                break;
-            case 8: // August
-                if (day > 31) {
-                    monthText = "August";
-                }
-                break;
-            case 9: // September
-                if (day > 30) {
-                    monthText = "September";
-                }
-                break;
-            case 10: // October
-                if (day > 31) {
-                    monthText = "October";
-                }
-                break;
-            case 11: // November
-                if (day > 30) {
-                    monthText = "November";
-                }
-                break;
-            case 12: // December
-                if (day > 31) {
-                    monthText = "December";
-                }
-                break;
-        }
 
-        if (monthText != null) {
-            throw new IllegalDateException(String.format("ERROR: day cannot be larger" +
-                    "than the number of days in %s.", monthText));
+            case JANUARY:
+            case MARCH:
+            case MAY:
+            case JULY:
+            case AUGUST:
+            case OCTOBER:
+            case DECEMBER:
+                while (day > 31) {
+                    day -= 1;
+                }
+                break;
+
+            case APRIL:
+            case JUNE:
+            case SEPTEMBER:
+            case NOVEMBER:
+                while (day > 30) {
+                    day -= 1;
+                }
+                break;
         }
     }
 

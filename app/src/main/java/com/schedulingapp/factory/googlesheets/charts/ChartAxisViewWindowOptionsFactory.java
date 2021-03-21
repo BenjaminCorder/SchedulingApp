@@ -28,7 +28,7 @@ public class ChartAxisViewWindowOptionsFactory
     //
 
     @Override
-    public ChartAxisViewWindowOptions generate() {
+    public ChartAxisViewWindowOptions build() {
         // Declare Variables
         ChartAxisViewWindowOptions options = new ChartAxisViewWindowOptions();
 

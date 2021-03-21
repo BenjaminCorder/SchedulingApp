@@ -24,7 +24,7 @@ public class ConditionValueFactory implements Factory<ConditionValue> {
     }
 
     @Override
-    public ConditionValue generate() {
+    public ConditionValue build() {
         // Declare Variables
         ConditionValue value = new ConditionValue();
 
