@@ -8,8 +8,10 @@ import com.schedulingapp.misc.Gender;
 import com.schedulingapp.model.employee.Employee;
 import com.schedulingapp.factory.EmployeeFactory;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class EmployeeInteractor {
@@ -23,7 +25,9 @@ public class EmployeeInteractor {
     //
     // Constructors
     //
-
+    List fullTime = new ArrayList();
+    List partTime = new ArrayList();
+    List reserve = new ArrayList();
     /**
      * Default Constructor
      */
