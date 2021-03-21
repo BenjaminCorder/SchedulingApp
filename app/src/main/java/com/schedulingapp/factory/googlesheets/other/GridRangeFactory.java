@@ -31,7 +31,7 @@ public class GridRangeFactory implements Factory<GridRange> {
     //
 
     @Override
-    public GridRange generate() {
+    public GridRange build() {
         // Declare Variables
         GridRange range = new GridRange();
 

@@ -26,7 +26,7 @@ public class TextFormatRunFactory implements Factory<TextFormatRun> {
     //
 
     @Override
-    public TextFormatRun generate() {
+    public TextFormatRun build() {
         // Declare Variables
         TextFormatRun formatRun = new TextFormatRun();
 

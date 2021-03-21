@@ -29,7 +29,7 @@ public class SpreadsheetThemeFactory implements Factory<SpreadsheetTheme> {
     //
 
     @Override
-    public SpreadsheetTheme generate() {
+    public SpreadsheetTheme build() {
         // Declare Variables
         SpreadsheetTheme theme = new SpreadsheetTheme();
 

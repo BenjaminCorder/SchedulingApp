@@ -6,7 +6,8 @@ import com.google.api.services.sheets.v4.model.SpreadsheetProperties;
 import com.google.api.services.sheets.v4.model.SpreadsheetTheme;
 import com.schedulingapp.factory.Factory;
 
-public class SpreadsheetPropertiesFactory implements Factory<SpreadsheetProperties> {
+public class SpreadsheetPropertiesFactory
+        implements Factory<SpreadsheetProperties> {
     //
     // Fields
     //
@@ -37,7 +38,7 @@ public class SpreadsheetPropertiesFactory implements Factory<SpreadsheetProperti
     // Public Methods
     //
 
-    public SpreadsheetProperties generate() {
+    public SpreadsheetProperties build() {
         // Declare Variables
         SpreadsheetProperties properties = new SpreadsheetProperties();
 

@@ -39,7 +39,7 @@ public class TextFormatFactory implements Factory<TextFormat> {
     //
 
     @Override
-    public TextFormat generate() {
+    public TextFormat build() {
         // Declare Variables
         TextFormat textFormat = new TextFormat();
 

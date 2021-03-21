@@ -37,7 +37,7 @@ public class SortSpecFactory implements Factory<SortSpec> {
     //
 
     @Override
-    public SortSpec generate() {
+    public SortSpec build() {
         // Declare Variables
         SortSpec spec = new SortSpec();
 

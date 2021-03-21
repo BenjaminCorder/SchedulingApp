@@ -29,7 +29,7 @@ public class BooleanConditionFactory implements Factory<BooleanCondition> {
     //
 
     @Override
-    public BooleanCondition generate() {
+    public BooleanCondition build() {
         // Declare Variables
         BooleanCondition condition = new BooleanCondition();
 

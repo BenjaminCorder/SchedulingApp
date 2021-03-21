@@ -29,7 +29,7 @@ public class PaddingFactory implements Factory<Padding> {
     //
 
     @Override
-    public Padding generate() {
+    public Padding build() {
         // Declare Variables
         Padding padding = new Padding();
 

@@ -30,7 +30,7 @@ public class DataValidationRuleFactory implements Factory<DataValidationRule> {
     //
 
     @Override
-    public DataValidationRule generate() {
+    public DataValidationRule build() {
         // Declare Variables
         DataValidationRule validationRule = new DataValidationRule();
 

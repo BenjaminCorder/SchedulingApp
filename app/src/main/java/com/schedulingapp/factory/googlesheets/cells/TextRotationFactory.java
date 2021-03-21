@@ -32,7 +32,7 @@ public class TextRotationFactory implements Factory<TextRotation> {
     //
 
     @Override
-    public TextRotation generate() {
+    public TextRotation build() {
         // Declare Variables
         TextRotation textRotation = new TextRotation();
 
