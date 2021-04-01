@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements MainViewContract{
         setContentView(R.layout.activity_main);
         mStatusTextView = findViewById(R.id.status);
 
-        // Create and attack a presenter
-        setPresenter(new MainPresenter(this));
+        // presenter is declaired and attached via method at bottom of file
+
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.

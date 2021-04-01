@@ -12,12 +12,19 @@ import android.widget.ListView;
 import com.schedulingapp.R;
 
 import java.util.ArrayList;
-
+/**
+ * A class representing a full time employee.
+ *
+ * @author Cami Wallace
+ * @version 1.0
+ * @since 1.0
+ * @see
+ */
 public class ViewEmployeeActivity extends AppCompatActivity {
 
     //declare variables
-    ListView listView;
-    ArrayList arrayList;
+    private ListView listView;
+    private ArrayList arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +34,8 @@ public class ViewEmployeeActivity extends AppCompatActivity {
         //get listview obj from xml file
         listView = (ListView) findViewById(R.id.list);
 
-        //connect the employee list
-        //arrayList = (ArrayList) findViewById(R.id.........
 
-        //create array adapter
+        //create array adapter (may need to move this to presenter)
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, arrayList);
         //set adapter
