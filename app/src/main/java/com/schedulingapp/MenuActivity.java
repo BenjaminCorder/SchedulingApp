@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.schedulingapp.presenter.MenuPresenter;
 import com.schedulingapp.view.AddEmployee;
 import com.schedulingapp.view.MainActivity;
 import com.schedulingapp.view.ViewEmployeeActivity;
@@ -14,11 +15,14 @@ import com.schedulingapp.view.ViewEmployeeActivity;
 public class MenuActivity extends AppCompatActivity  {
 
     //declairing variables
-    Button addEmployee;
-    Button viewEmployee;
-    Button log_out;
-    Button createSchedule;
-    Button emailSchedule;
+    private Button addEmployee;
+    private Button viewEmployee;
+    private Button log_out;
+    private Button createSchedule;
+    private Button emailSchedule;
+
+    private MenuPresenter menuPresenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class MenuActivity extends AppCompatActivity  {
         addEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAddEmployeeActivity();
+                menuPresenter.openAddEmployeeActivity();
             }
         });
 
@@ -44,21 +48,21 @@ public class MenuActivity extends AppCompatActivity  {
         viewEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openViewEmployeeActivity();
+                menuPresenter.openViewEmployeeActivity();
             }
         });
         //onclick listener for create schedule
         createSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                create_schedule();
+                menuPresenter.create_schedule();
             }
         });
         //onclick listener for create schedule
         emailSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email_schedule();
+                menuPresenter.email_schedule();
             }
         });
 
@@ -66,43 +70,11 @@ public class MenuActivity extends AppCompatActivity  {
         log_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logout();
+                menuPresenter.logout();
             }
         });
 
     }
 
-   //method to open the AddEmployee Activity on button click
-    public void openAddEmployeeActivity(){
-        Intent intent = new Intent(this, AddEmployee.class);
-        startActivity(intent);
-    }
 
-    //method to handle logic when View Employee button is clicked
-    public void openViewEmployeeActivity(){
-        //logic to handle button click here
-        Intent intent = new Intent(this, ViewEmployeeActivity.class);
-        startActivity(intent);
-    }
-    //temporary stub function to email employee schedules
-    //logic for emailing schedule to employees or directs to where it is happening
-    public void email_schedule(){
-        //logic
-
-    }
-    //temporary stub function to create employee schedule
-    //either open new activity or direct to class in order to create new schedule
-    public void create_schedule(){
-        //add logic for creating schedule or direct to where that happens
-
-    }
-    //method to log out of app
-    public void logout(){
-        //send back to login in page if logging out
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-
-        //may need to add stuff to log out of google
-
-    }
 }
