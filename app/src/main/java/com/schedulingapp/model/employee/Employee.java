@@ -5,6 +5,7 @@ import com.schedulingapp.model.payperiod.PayPeriod;
 
 /**
  * Class Employee
+ *  @author Benjamin Corder, Cami Wallace
  */
 abstract public class Employee {
 
@@ -12,8 +13,10 @@ abstract public class Employee {
     // Fields
     //
 
-    protected String name;
+    protected String firstName;
+    protected String lastName;
     protected Gender gender;
+    protected String email;
     protected Availability availability;
     protected PayPeriod workSchedule;
 
@@ -33,21 +36,52 @@ abstract public class Employee {
     //
 
     /**
-     * Get the value of name
+     * Get the value of firstName
      *
      * @return the value of name
      */
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
+    }
+    /**
+     * Get the value of lastName
+     *
+     * @return the value of name
+     */
+    public String getLastName() {
+        return lastName;
     }
 
+    /**
+     * Set the value of their first name
+     *
+     * @param newVar the new value of name
+     */
+    public void setFirstName(String newVar) {
+        firstName = newVar;
+    }
     /**
      * Set the value of name
      *
      * @param newVar the new value of name
      */
-    public void setName(String newVar) {
-        name = newVar;
+    public void setLastName(String newVar) {
+        lastName = newVar;
+    }
+
+    /**
+     * Get the value of email
+     *
+     * @return the value of email
+     */
+    public String getEmail(){return email;}
+    /**
+     * set the value of email
+     *
+     * @param newVar the new value of email
+     */
+    public void setEmail(String newVar){
+        email = newVar;
     }
 
     /**

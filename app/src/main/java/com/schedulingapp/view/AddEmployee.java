@@ -1,5 +1,12 @@
 package com.schedulingapp.view;
-
+/**
+ * A class representing a full time employee.
+ *
+ * @author Cami Wallace
+ * @version 1.0
+ * @since 1.0
+ * @see com.schedulingapp.model.employee.Employee
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +23,7 @@ import com.schedulingapp.MenuActivity;
 import com.schedulingapp.R;
 import com.schedulingapp.misc.Gender;
 import com.schedulingapp.model.employee.FullTimeEmployee;
+import com.schedulingapp.presenter.AddEmployeePresenter;
 
 public class AddEmployee extends AppCompatActivity {
 
@@ -25,49 +33,34 @@ public class AddEmployee extends AppCompatActivity {
     private RadioButton shiftBtn;
     private RadioGroup shiftGroup;
     private Button addEmployeeBtn;
+    private AddEmployeePresenter presenter;
     EditText firstName;
     EditText lastName;
+    EditText email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_employee);
+        //addEmployeePresentor
+        presenter = new AddEmployeePresenter(this);
 
-        //call method to retreive gender data
+
         addEmployeeBtn = findViewById(R.id.add_employee_btn);
         addEmployeeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getShift();//may not be needed since checking shift before switch
-                getGender();
+                getGender(); //method to collect gender data on employee
+                //collecting data from textBoxes and saving them to variables
                 firstName = (EditText) findViewById(R.id.first_name_text);
-                firstName.getText().toString();
                 lastName = (EditText) findViewById(R.id.last_name_text);
-                lastName.getText().toString();
-                //Log.d(TAG, "onClick: Name of employee :" + firstName + lastName);
-
-                //use switch w/shift to determine what list you will add your
-                //new employee too.
-                //not sure how we are going to be adding employees to a list
+                email = (EditText) findViewById(R.id.email_text);
+                //getting the shift data in form of int
                 int shift = shiftGroup.getCheckedRadioButtonId();
-                switch (shift){
-                    case R.id.full_time_radio_btn:
-                        //add employee to full time list
+                //calling presenter to add employee to correct by using their shift
+                presenter.addEmployeeByShift(shift);
 
-                        break;
-                    case R.id.part_time_radio_btn:
-                        //add employee to part time list
-
-                        break;
-                    case R.id.reserve_radio_btn:
-                        //add employee to reserve list
-
-                        break;
-                    default:
-                        //It was giving me an error on TAG saying it is a private varibale somewhere else
-                        //Log.d(TAG, "onClick: Error adding Employee");
-                       Toast.makeText(getApplicationContext(), "Error adding employee", Toast.LENGTH_LONG).show();
-                }
 
                 //after employee is added to list direct customer back to menu page
                 navigateToMenu();
@@ -76,7 +69,8 @@ public class AddEmployee extends AppCompatActivity {
         });
 
     }
-    //possible different way to get shift data from radio group
+    //I am leaving these methods in the view because they are only saving retrieved
+    // data to a variable.
     //Method to save shift type of employee to variable
     public void getShift(){
         shiftGroup = (RadioGroup) findViewById(R.id.shift_radio_group);
@@ -88,7 +82,7 @@ public class AddEmployee extends AppCompatActivity {
         Toast.makeText(AddEmployee.this, shiftBtn.getText(), Toast.LENGTH_LONG).show();
     }
 
-    //method that retreives gender and saves it to variable
+    //method that retrieves gender and saves it to variable
     public void getGender(){
         radioGenderGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
         //get selected radio button from group

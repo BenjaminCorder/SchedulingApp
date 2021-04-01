@@ -9,7 +9,7 @@ import com.schedulingapp.model.payperiod.PayPeriod;
 /**
  * A class representing a full time employee.
  *
- * @author Benjamin Corder
+ * @author Benjamin Corder, Cami Wallace
  * @version 1.0
  * @since 1.0
  * @see com.schedulingapp.model.employee.Employee
@@ -49,6 +49,8 @@ public class FullTimeEmployee extends Employee {
     public FullTimeEmployee(FullTimeEmployee rhs) throws IllegalDateException {
         super(rhs);
     }
+
+
 
     //
     // Methods

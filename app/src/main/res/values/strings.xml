@@ -39,6 +39,8 @@
     <string name="full_time">Full-Time</string>
     <string name="part_time">Part-Time</string>
     <string name="reserve">Reserve</string>
+    <string name="enter_employee_email">Enter Employee Email</string>
+    <string name="email">Email</string>
 
     <!-- Content Description for images -->
 
