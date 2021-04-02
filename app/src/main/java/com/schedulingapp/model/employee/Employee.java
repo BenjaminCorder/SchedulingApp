@@ -1,5 +1,7 @@
 package com.schedulingapp.model.employee;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
 import com.schedulingapp.model.payperiod.PayPeriod;
 
@@ -23,7 +25,18 @@ abstract public class Employee {
     //
     // Constructors
     //
-    public Employee() {
+    public Employee(String firstName, String lastName, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+    }
+
+    public Employee(JsonNode employeeNode) {
+
+    }
+
+    public Employee(FullTimeEmployee rhs) {
+
     }
 
     //
@@ -51,6 +64,8 @@ abstract public class Employee {
     public String getLastName() {
         return lastName;
     }
+
+    public String getFullName() { return firstName + " " + lastName;}
 
     /**
      * Set the value of their first name
@@ -142,9 +157,20 @@ abstract public class Employee {
     // Other methods
     //
 
+    public int getHoursWorked() {
+        return 0;
+    }
+
+    public boolean isOverTimeApproved() {
+        return false;
+    }
+
     /**
      *
      */
     abstract protected void validate();
 
+    abstract public EmploymentType getEmploymentType();
+
+    abstract public int getMaxHours();
 }

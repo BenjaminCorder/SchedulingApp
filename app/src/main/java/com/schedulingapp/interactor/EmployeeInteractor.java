@@ -3,13 +3,18 @@ package com.schedulingapp.interactor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.schedulingapp.exceptions.DateOutOfBoundsException;
 import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
+import com.schedulingapp.misc.ShiftTime;
 import com.schedulingapp.model.employee.Employee;
 import com.schedulingapp.factory.EmployeeFactory;
+import com.schedulingapp.model.shift.Shift;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class EmployeeInteractor {
@@ -121,6 +126,19 @@ public class EmployeeInteractor {
 
         // Add the employee to the map
         employeeMap.put(employee.getFullName(), employee);
+    }
+
+    private List<Employee> shiftAvailability(Shift shift) throws DateOutOfBoundsException {
+
+        List <Employee> availableReserves = new ArrayList<>();
+
+        for (Employee i : employeeMap.values()) {
+            if (i.getAvailability().checkAvailability(shift) && (i.getMaxHours() > i.getHoursWorked() || i.isOverTimeApproved())) {
+                availableReserves.add(i);
+            }
+        }
+        return availableReserves;
+
     }
 
 }
