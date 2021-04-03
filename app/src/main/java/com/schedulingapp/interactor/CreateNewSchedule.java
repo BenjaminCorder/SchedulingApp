@@ -38,6 +38,8 @@ public class CreateNewSchedule {
 
     private void formatSchedule() {
 
-        spreadsheetFactory.setProperties();
+        //I commented this out since it is causeing an error and i was unsure
+        //what parameter was needed.
+       // spreadsheetFactory.setProperties();
     }
 }

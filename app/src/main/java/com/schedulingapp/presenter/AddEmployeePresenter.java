@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.schedulingapp.R;
+import com.schedulingapp.misc.EmploymentType;
 import com.schedulingapp.misc.Gender;
 import com.schedulingapp.model.employee.Employee;
 import com.schedulingapp.model.employee.FullTimeEmployee;
@@ -39,10 +40,20 @@ public class AddEmployeePresenter {
      */
     public AddEmployeePresenter(AddEmployee addEmployee){
         //add other files constructors
-        this.employee = new Employee() {
+        this.employee = new Employee(firstName, lastName, gender) {
             @Override
             protected void validate() {
              return;//need to figure out what we are validating here.
+            }
+
+            @Override
+            public EmploymentType getEmploymentType() {
+                return null;
+            }
+
+            @Override
+            public int getMaxHours() {
+                return 0;
             }
         };
         this.view = addEmployee;
